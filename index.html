@@ -256,41 +256,20 @@ body.locked #nav{visibility:hidden}
 .slide input{width:100%;accent-color:var(--lilac);height:28px}
 @media (max-width:640px){.hl{grid-template-columns:1fr}.hlvs{text-align:center}.sect h3{font-size:32px}}
 @media (prefers-reduced-motion:reduce){.hlc,.bigcode{animation:none!important}}
+/* the top bar: Tools / Games switch */
+#nav{justify-content:flex-end;align-items:center;overflow:visible}
+#nav .seg{display:flex;gap:2px;padding:3px;border:1px solid var(--rule);border-radius:999px;background:#0e0d11}
+#nav .seg a{padding:8px 18px;border-radius:999px;border-bottom:0;color:var(--muted);transition:background .2s ease,color .2s ease}
+#nav .seg a:hover{color:var(--ink)}
+#nav .seg a.on{background:var(--cream);color:#141216;border-bottom:0}
+#nav .seg a::after{display:none!important}
+@media (max-width:640px){#nav .seg a{padding:7px 13px}}
 </style>
 </head>
 <body>
 <header id="top">
   <a class="brand" href="#/"><svg viewBox="12.5 10.5 26.9 21.8" aria-hidden="true"><path d="M28.3 11h10.6L22.5 25H13zM22.5 25.9h10.8l5.6 5.9H28.3z" fill="currentColor"/></svg><h1>Echo <b>AirTools</b></h1></a>
-  <nav id="nav" aria-label="Tools">
-    <a href="#/route" data-t="route">Route checker</a>
-    <a href="#/rotation" data-t="rotation">Rotation planner</a>
-    <a href="#/distance" data-t="distance">Distance</a>
-    <a href="#/numbers" data-t="numbers">Free numbers</a>
-    <a href="#/profit" data-t="profit">Seats &amp; profit</a>
-    <a href="#/partners" data-t="partners">Codeshare partners</a>
-    <a href="#/gaps" data-t="gaps">Route gaps</a>
-    <a href="#/connect" data-t="connect">Connections</a>
-    <a href="#/time" data-t="time">Time converter</a>
-    <a href="#/slots" data-t="slots">Slot finder</a>
-    <a href="#/fleetuse" data-t="fleetuse">Fleet use</a>
-    <a href="#/rank" data-t="rank">Where you rank</a>
-    <a href="#/reach" data-t="reach">Range finder</a>
-    <a href="#/day" data-t="day">Day builder</a>
-    <a href="#/hubs" data-t="hubs">Hub compare</a>
-    <a href="#/vs" data-t="vs">Head to head</a>
-    <a href="#/airport" data-t="airport">Airport profile</a>
-    <a href="#/map" data-t="map">Network map</a>
-    <a href="#/waves" data-t="waves">Hub waves</a>
-    <a href="#/stopover" data-t="stopover">Stopovers</a>
-    <a href="#/overlap" data-t="overlap">Division overlap</a>
-    <a href="#/changes" data-t="changes">What changed</a>
-    <a href="#/rightsize" data-t="rightsize">Right-size</a>
-    <a href="#/card" data-t="card">Airline card</a>
-    <a href="#/export" data-t="export">Export</a>
-    <a href="#/nexthub" data-t="nexthub">Next hub</a>
-    <a href="#/twins" data-t="twins">Network twins</a>
-    <a href="#/games" data-t="games">Games</a>
-  </nav>
+  <nav id="nav" aria-label="Sections"><div class="seg"><a href="#/" data-t="tools">Tools</a><a href="#/games" data-t="games">Games</a></div></nav>
 </header>
 <main id="main"><div class="boot"><div class="sky"><svg class="arc" viewBox="0 0 240 80" aria-hidden="true"><path d="M10 70 Q120 -20 230 70" fill="none" stroke="#3a3841" stroke-width="2" stroke-dasharray="3 6"/><circle cx="10" cy="70" r="4" fill="#c4a1ff"/><circle cx="230" cy="70" r="4" fill="#c4a1ff"/></svg>
   <svg class="plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#ece2ff"/></svg></div><p role="status">Loading the Echo timetable…</p></div></main>
@@ -1577,13 +1556,12 @@ function viewHome(){
   const caps=[...new Set(DIVS.map(d=>d.captured))].sort(),cap=caps[caps.length-1];
   $("main").innerHTML=`<section class="hero"><h2><span class="w1">Echo</span> <em class="w2">AirTools<svg class="swoosh" viewBox="0 0 230 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 20 C 60 4, 140 30, 226 8" fill="none" stroke="#c4a1ff" stroke-width="5" stroke-linecap="round"/></svg></em></h2><p>Little tools for running your airline, built on the same timetable as Echo Live: every route, aircraft and flight number in all ${["","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"][DIVS.length]||DIVS.length} divisions.</p></section>
   <p class="status"><b>${fmtN(AL.length)}</b> airlines · <b>${fmtN(apList().length)}</b> airports${cap?` · timetable from <b>${new Date(cap+"T12:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"long"})}</b>`:""}</p>
-  <div class="tools">${TOOLS.map(([k,n,p],i)=>`<a class="tool" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}</span><h3>${esc(n)}</h3><p>${esc(p)}</p></a>`).join("")}</div>
-  <div class="sect"><h3>Games</h3><a href="#/games">All games →</a></div>${gameCards()}`;}
+  <div class="tools">${TOOLS.map(([k,n,p],i)=>`<a class="tool" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}</span><h3>${esc(n)}</h3><p>${esc(p)}</p></a>`).join("")}</div>`;}
 function route(){
   const t=(location.hash.slice(2).split("?")[0])||"";
-  const isGame=t==="games"||GAMES.some(x=>x[0]===t);document.querySelectorAll("#nav a").forEach(a=>{const on=a.dataset.t===t||(isGame&&a.dataset.t==="games");a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+  const isGame=t==="games"||GAMES.some(x=>x[0]===t);document.querySelectorAll("#nav a").forEach(a=>{const on=a.dataset.t===(isGame?"games":"tools");a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
   const v={route:viewRoute,rotation:viewRotation,distance:viewDistance,numbers:viewNumbers,profit:viewProfit,partners:viewPartners,gaps:viewGaps,connect:viewConnect,time:viewTime,slots:viewSlots,fleetuse:viewFleetUse,rank:viewRank,reach:viewReach,day:viewDay,hubs:viewHubs,vs:viewVs,airport:viewAirport,map:viewMap,waves:viewWaves,stopover:viewStop,overlap:viewOverlap,changes:viewChanges,rightsize:viewRightsize,card:viewCard,export:viewExport,nexthub:viewNextHub,twins:viewTwins,quiz:viewQuiz,games:viewGames,higher:viewHigher,codes:viewCodes,guess:viewGuess,realroute:viewReal}[t]||viewHome;
-  if(location.hash!==route.last){const same=(route.lastT===t);route.last=location.hash;route.lastT=t;if(!same)scrollTo(0,0);v();const n=TOOLS.find(x=>x[0]===t)||GAMES.find(x=>x[0]===t)||(t==="games"?[t,"Games"]:null);document.title=n?`${n[1]} · Echo AirTools`:"Echo AirTools";}
+  if(location.hash!==route.last){const same=(route.lastT===t);route.last=location.hash;route.lastT=t;if(!same)scrollTo(0,0);v();if(TOOLS.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/">← All tools</a></p>`);const n=TOOLS.find(x=>x[0]===t)||GAMES.find(x=>x[0]===t)||(t==="games"?[t,"Games"]:null);document.title=n?`${n[1]} · Echo AirTools`:"Echo AirTools";}
 }
 addEventListener("hashchange",()=>{if(!document.body.classList.contains("locked")&&D)route();});
 (async()=>{
