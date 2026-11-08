@@ -263,13 +263,46 @@ body.locked #nav{visibility:hidden}
 #nav .seg a:hover{color:var(--ink)}
 #nav .seg a.on{background:var(--cream);color:#141216;border-bottom:0}
 #nav .seg a::after{display:none!important}
-@media (max-width:640px){#nav .seg a{padding:7px 13px}}
+@media (max-width:640px){#nav .seg a{padding:7px 11px;letter-spacing:.08em}}
+@media (max-width:560px){.brand h1{display:none}}
+/* more games */
+.qtail.small{max-width:260px;padding:16px 14px 0;margin-bottom:12px}
+.dailyrow{display:flex;gap:8px;margin:0 0 14px}.dailyrow i{width:38px;height:38px;border-radius:8px;animation:pop .4s cubic-bezier(.2,1.5,.4,1) backwards}
+.dailyrow i:nth-child(2){animation-delay:.08s}.dailyrow i:nth-child(3){animation-delay:.16s}.dailyrow i:nth-child(4){animation-delay:.24s}.dailyrow i:nth-child(5){animation-delay:.32s}
+.dailyrow i.y{background:var(--good)}.dailyrow i.n{background:var(--warn)}
+pre.share{margin:0 0 14px;padding:12px 14px;border:1px solid var(--rule);border-radius:10px;background:#0b0a0d;color:var(--ink);font:600 14px/1.5 var(--ui);white-space:pre-wrap}
+.oddg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.oddc{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 10px;border:1px solid var(--rule);border-radius:14px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit;text-align:center;transition:border-color .2s ease,transform .2s ease;animation:rise .45s cubic-bezier(.2,.8,.2,1) backwards}
+.oddc:nth-child(2){animation-delay:.06s}.oddc:nth-child(3){animation-delay:.12s}.oddc:nth-child(4){animation-delay:.18s}
+.oddc:hover:not(:disabled){border-color:var(--lilac);transform:translateY(-2px)}.oddc:disabled{cursor:default}
+.oddc b{font:400 19px/1.1 var(--display);text-transform:uppercase;color:var(--lav)}.oddc span{color:var(--muted);font-size:12.5px}.oddc em{font-style:normal;font-weight:700;font-size:13px;margin-top:4px}
+.oddc.right{border-color:var(--good);background:#13261b}.oddc.wrong{border-color:var(--warn);background:#2b1616}
+.oddsvg{height:96px;width:auto}
+.pinq{margin:0 0 10px;font-size:20px}.pinq b{font:400 40px/1 var(--display);color:var(--lav);margin-right:6px}
+.pinbox svg{cursor:crosshair}
+.pinline{fill:none;stroke:var(--cream);stroke-width:2;stroke-dasharray:5 5}
+.pinyou{fill:var(--warn);stroke:#0b0a0d;stroke-width:2}.pinreal{fill:var(--good);stroke:#0b0a0d;stroke-width:2;animation:pop .4s cubic-bezier(.2,1.5,.4,1) backwards;transform-box:fill-box;transform-origin:center}
+.pinlbl{fill:var(--ink);font:700 15px var(--ui);paint-order:stroke;stroke:#0b0a0d;stroke-width:4px}
+@media (max-width:640px){.oddg{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){.dailyrow i,.oddc,.pinreal{animation:none!important}}
+/* Echo Elysium */
+:root{--ely:#E76FFF}
+#nav .seg a.elyseg.on{background:var(--ely);color:#170a1a}
+.tools.ely .tool{border-left:3px solid var(--ely)}
+.tools.ely .tool h3{color:#f3c4ff}
+.elyswitch{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;margin:0 0 18px;border:1px solid #4d2f55;border-radius:14px;background:linear-gradient(120deg,#1c1120,var(--card))}
+.elyswitch b{display:block;font:400 24px/1 var(--display);text-transform:uppercase;color:#f3c4ff;margin-bottom:4px}.elyswitch span{color:var(--muted);font-size:14px}
+.tog{flex:none;width:54px;height:30px;border-radius:15px;border:1px solid var(--rule);background:#24222a;position:relative;cursor:pointer;padding:0;transition:background .2s ease}
+.tog i{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--muted);transition:transform .2s ease,background .2s ease}
+.tog.on{background:var(--ely);border-color:var(--ely)}.tog.on i{transform:translateX(24px);background:#170a1a}
+.elybar{background:#2a1530;color:#f3c4ff;text-align:center;padding:8px 16px;font-size:14px;border-bottom:1px solid #4d2f55}
+.elybar .linkbtn{color:#fff}
 </style>
 </head>
 <body>
 <header id="top">
   <a class="brand" href="#/"><svg viewBox="12.5 10.5 26.9 21.8" aria-hidden="true"><path d="M28.3 11h10.6L22.5 25H13zM22.5 25.9h10.8l5.6 5.9H28.3z" fill="currentColor"/></svg><h1>Echo <b>AirTools</b></h1></a>
-  <nav id="nav" aria-label="Sections"><div class="seg"><a href="#/" data-t="tools">Tools</a><a href="#/games" data-t="games">Games</a></div></nav>
+  <nav id="nav" aria-label="Sections"><div class="seg"><a href="#/" data-t="tools">Tools</a><a href="#/elysium" data-t="elysium" class="elyseg">Elysium</a><a href="#/games" data-t="games">Games</a></div></nav>
 </header>
 <main id="main"><div class="boot"><div class="sky"><svg class="arc" viewBox="0 0 240 80" aria-hidden="true"><path d="M10 70 Q120 -20 230 70" fill="none" stroke="#3a3841" stroke-width="2" stroke-dasharray="3 6"/><circle cx="10" cy="70" r="4" fill="#c4a1ff"/><circle cx="230" cy="70" r="4" fill="#c4a1ff"/></svg>
   <svg class="plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#ece2ff"/></svg></div><p role="status">Loading the Echo timetable…</p></div></main>
@@ -1455,6 +1488,285 @@ function rnRound(){
     $("nx").onclick=rnRound;$("nx").focus();};
   $("yes").onclick=()=>go(true);$("no").onclick=()=>go(false);}
 
+/* ---------- more games ---------- */
+GAMES.unshift(["daily","Echo Daily","Five questions, the same for everyone today. Share your score in Discord. New set at midnight UTC."]);
+GAMES.push(["whoflies","Who flies it?","A route from the Echo timetable. Which of these airlines flies it?"],
+  ["oddone","Odd one out","Four Echo airlines, three from the same division. Find the one that isn't."],
+  ["pin","Pin the airport","Tap the map where you think the airport is. Within 100 km is a bullseye."],
+  ["flighttime","Flight time","How long do Echo airlines take to fly it? Slide to your guess."]);
+
+/* a seeded random number generator, so Echo Daily is the same for everyone */
+function seeded(n){return ()=>{n|=0;n=n+0x6D2B79F5|0;let t=Math.imul(n^n>>>15,1|n);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const pickW=(a,rnd)=>a[Math.floor((rnd||Math.random)()*a.length)];
+/* how long Echo airlines take between two airports, either way (median of the timetable's block times) */
+function pairDur(a,b){const L=[];for(const r of ROT){if((r.A===a&&r.B===b)||(r.A===b&&r.B===a))L.push(r.A===a?r.dur:(r.idur||r.dur));
+  if(r.C&&((r.B===a&&r.C===b)||(r.B===b&&r.C===a)))L.push(r.B===a?r.cdur:(r.cidur||r.cdur));}return L.length?median(L):null;}
+let PAIRS1=null;   // airport pairs between busy airports, for the route games
+function busyPairs(){if(PAIRS1)return PAIRS1;const top=new Set(apBusy().slice(0,600).map(x=>x[0]));
+  PAIRS1=[...pairIndex()].filter(([k])=>{const [x,y]=k.split("|");return top.has(x)&&top.has(y);});return PAIRS1;}
+
+/* a round of four buttons, one or more right; calls done(ok) after the answer is shown */
+function fourWay(box,opts,done,explain){
+  box.innerHTML=`<div class="qopts">${opts.map((o,i)=>`<button type="button" class="btn qo" data-i="${i}">${o.html}</button>`).join("")}</div><div id="qr"></div>`;
+  box.querySelectorAll(".qo").forEach(b=>b.onclick=()=>{const o=opts[+b.dataset.i],ok=!!o.ok;
+    box.querySelectorAll(".qo").forEach(x=>{x.disabled=true;if(opts[+x.dataset.i].ok)x.classList.add("right");else if(x===b)x.classList.add("wrong");});
+    done(ok,explain(ok,o));});}
+function endScreen(out,key,score,of,again,lines){best.set(key,score);
+  out.innerHTML=`<div class="stats">${stat("You got",`${score} of ${of}`,lines[score>=of*0.9?0:score>=of*0.6?1:2],true)}${stat("Best",`${best.get(key)} of ${of}`,"")}</div><button type="button" class="btn prim" id="nx">Play again</button>`;
+  $("nx").onclick=again;}
+
+/* question makers, shared by the games and Echo Daily. Each gives {top, opts, explain} */
+function qWho(rnd){const P=busyPairs().filter(([,m])=>m.size<=3),[k,m]=pickW(P,rnd),[a,b]=k.split("|"),flies=new Set(m.keys());
+  const near=gamePool().filter(i=>!flies.has(i)&&ROT.some(r=>r.ai===i&&(r.A===a||r.A===b))),others=gamePool().filter(i=>!flies.has(i));
+  const ans=[...m].sort((p,q)=>q[1]-p[1])[0][0],opts=new Set([ans]);let t=0;
+  while(opts.size<4&&t++<300)opts.add(pickW((rnd||Math.random)()<0.7&&near.length>3?near:others,rnd));
+  const O=[...opts].sort((p,q)=>((rnd||Math.random)()-0.5));
+  return {top:`<p class="pair"><b>${a}</b> ${esc(cityOf(a))}<span class="sub">${esc(country(AP[a].cc))}</span></p><p class="pairto">${dist(km(a,b))}</p><p class="pair"><b>${b}</b> ${esc(cityOf(b))}<span class="sub">${esc(country(AP[b].cc))}</span></p><p class="qask">Who flies it?</p>`,
+    opts:O.map(i=>({html:`${esc(AL[i].name)}<span class="sub">${esc(divShort(i))}</span>`,ok:flies.has(i)})),
+    explain:ok=>`${ok?"Right.":"Not quite."} ${[...m].sort((p,q)=>q[1]-p[1]).map(([i,n])=>`${esc(AL[i].name)} (${fmtN(n)} a week)`).join(", ")} ${m.size>1?"fly":"flies"} ${a}–${b}.`};}
+function qTail(rnd){const pool=quizPool(),ans=pickW(pool,rnd),dv=divOf(ans),near=pool.filter(i=>i!==ans&&divOf(i)===dv),opts=new Set([ans]);
+  while(opts.size<4)opts.add(pickW((rnd||Math.random)()<0.7&&near.length>=3?near:pool,rnd));
+  return {top:`<div class="qtail small">${tailSVG(ans,"qsvg")}</div><p class="qask">Whose tail is this?</p>`,opts:[...opts].sort(()=>((rnd||Math.random)()-0.5)).map(i=>({html:esc(AL[i].name),ok:i===ans})),
+    explain:ok=>`${ok?"Got it.":"Not quite."} It's ${esc(AL[ans].name)}, ${esc(dv.name)}.`};}
+function qCode(rnd){const pool=apBusy().slice(0,150).map(x=>x[0]),ans=pickW(pool,rnd),opts=[ans],cs=new Set([cityOf(ans)]);
+  while(opts.length<4){const c=pickW(pool,rnd);if(!cs.has(cityOf(c))){cs.add(cityOf(c));opts.push(c);}}
+  return {top:`<p class="bigcode">${ans}</p><p class="qask">Which city?</p>`,opts:opts.sort(()=>((rnd||Math.random)()-0.5)).map(c=>({html:`${esc(cityOf(c))}<span class="sub">${esc(country(AP[c].cc))}</span>`,ok:c===ans})),
+    explain:ok=>`${ok?"Right.":"Not quite."} ${ans} is ${esc(AP[ans].name)}.`};}
+function qReal(rnd){const P=pairIndex(),pool=apBusy().slice(0,600).map(x=>x[0]);let a,b;const real=(rnd||Math.random)()<0.5;
+  if(real){[a,b]=pickW(busyPairs(),rnd)[0].split("|");}else{let t=0;do{a=pickW(pool,rnd);b=pickW(pool,rnd);t++;}while((a===b||P.has(pairKey(a,b))||km(a,b)<400||km(a,b)>12000||!legalPair(a,b))&&t<500);}
+  const m=P.get(pairKey(a,b));
+  return {top:`<p class="pair"><b>${a}</b> ${esc(cityOf(a))}</p><p class="pairto">${dist(km(a,b))}</p><p class="pair"><b>${b}</b> ${esc(cityOf(b))}</p><p class="qask">Does any Echo airline fly it nonstop?</p>`,
+    opts:[{html:"Echo flies it",ok:real},{html:"Nobody does",ok:!real}],explain:ok=>`${ok?"Right.":"Not quite."} ${m?`${m.size} Echo airline${m.size>1?"s fly":" flies"} it.`:"No Echo airline flies it nonstop."}`};}
+function qHL(rnd){const pool=gamePool(),st=pickW(HL_STATS,rnd);let a,b,t=0;do{a=pickW(pool,rnd);b=pickW(pool,rnd);t++;}while((a===b||st[2](a)===st[2](b))&&t<200);
+  return {top:`<p class="qask">Which has more ${st[1]}?</p>`,opts:[a,b].map(i=>({html:`${esc(AL[i].name)}<span class="sub">${esc(divShort(i))}</span>`,ok:st[2](i)>st[2](i===a?b:a)})),
+    explain:ok=>`${ok?"Right.":"Not quite."} ${esc(AL[a].name)}: ${st[3](st[2](a))}, ${esc(AL[b].name)}: ${st[3](st[2](b))}.`};}
+
+/* ---- Echo Daily ---- */
+const DY={i:0,res:[],qs:[]};
+function dailyKey(){const d=new Date();return d.getUTCFullYear()*10000+(d.getUTCMonth()+1)*100+d.getUTCDate();}
+function viewDaily(){
+  const k=dailyKey(),saved=(()=>{try{return JSON.parse(localStorage.getItem("echo_tb_daily")||"null");}catch(_){return null;}})();
+  $("main").innerHTML=gameHead("Echo","Daily","Five questions, the same for everyone in Echo today. One go each. Share how you did.")+`<div class="out" id="out"></div>`;
+  if(saved&&saved.k===k)return dailyEnd(saved.res);
+  const rnd=seeded(k);DY.qs=[qTail(rnd),qCode(rnd),qHL(rnd),qWho(rnd),qReal(rnd)];DY.i=0;DY.res=[];dailyRound();}
+function dailyRound(){const out=$("out");if(DY.i>=DY.qs.length){try{localStorage.setItem("echo_tb_daily",JSON.stringify({k:dailyKey(),res:DY.res}));}catch(_){}return dailyEnd(DY.res);}
+  const q=DY.qs[DY.i];out.innerHTML=`<div class="stats">${stat("Question",`${DY.i+1} of 5`,"")}${stat("Score",fmtN(DY.res.filter(Boolean).length),"")}</div><div class="codebox">${q.top}<div id="qb"></div></div>`;
+  fourWay($("qb"),q.opts,(ok,ex)=>{DY.res.push(ok);$("qr").innerHTML=`<p class="qres ${ok?"ok":"bad"}">${ex}</p><button type="button" class="btn prim" id="nx">${DY.i>=4?"See your score":"Next question"}</button>`;$("nx").onclick=()=>{DY.i++;dailyRound();};$("nx").focus();},q.explain);}
+function dailyEnd(res){const out=$("out"),n=res.filter(Boolean).length,d=new Date(),date=d.toLocaleDateString("en-GB",{day:"numeric",month:"short",timeZone:"UTC"});
+  const share=`Echo Daily ${date}: ${n}/5\n${res.map(x=>x?"🟩":"🟥").join("")}`;best.set("daily",n);
+  out.innerHTML=`<div class="stats">${stat("Today",`${n} of 5`,n===5?"perfect":n>=3?"nicely done":"tomorrow's another day",true)}${stat("Best",`${best.get("daily")} of 5`,"")}</div>
+  <div class="codebox"><p class="dailyrow">${res.map(x=>`<i class="${x?"y":"n"}"></i>`).join("")}</p><pre class="share" id="sh">${esc(share)}</pre>
+  <div class="row-btns"><button type="button" class="btn prim" id="cp">Copy for Discord</button><span class="note" id="cpm" style="margin:0"></span></div><p class="note">A new set comes at midnight UTC (${new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+1)).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})} your time).</p></div>`;
+  $("cp").onclick=async()=>{try{await navigator.clipboard.writeText(share);$("cpm").textContent="Copied.";}catch(_){const r=document.createRange();r.selectNodeContents($("sh"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("cpm").textContent="Selected. Press Ctrl+C to copy.";}};}
+
+/* ---- who flies it? ---- */
+const WF={n:0,score:0};
+function viewWho(){$("main").innerHTML=gameHead("Who","flies it?","Ten routes from the Echo timetable. Pick an airline that flies each one.")+`<div class="out" id="out"></div>`;WF.n=0;WF.score=0;wfRound();}
+function wfRound(){const out=$("out");if(WF.n>=10)return endScreen(out,"whoflies",WF.score,10,viewWho,["you know who's where","good knowledge","plenty of airlines out there"]);
+  const q=qWho();WF.n++;out.innerHTML=`<div class="stats">${stat("Round",`${WF.n} of 10`,"")}${stat("Score",fmtN(WF.score),"")}</div><div class="codebox">${q.top}<div id="qb"></div></div>`;
+  fourWay($("qb"),q.opts,(ok,ex)=>{if(ok)WF.score++;$("qr").innerHTML=`<p class="qres ${ok?"ok":"bad"}">${ex}</p><button type="button" class="btn prim" id="nx">${WF.n>=10?"See score":"Next route"}</button>`;$("nx").onclick=wfRound;$("nx").focus();},q.explain);}
+
+/* ---- odd one out ---- */
+const OD={n:0,score:0};
+function viewOdd(){$("main").innerHTML=gameHead("Odd","one out","Three of these airlines are in the same division. Which one isn't?")+`<div class="out" id="out"></div>`;OD.n=0;OD.score=0;odRound();}
+function odRound(){const out=$("out");if(OD.n>=10)return endScreen(out,"oddone",OD.score,10,viewOdd,["you know your divisions","not bad","the divisions are a big place"]);
+  const pool=gamePool(),dv=pickR(DIVS.filter(d=>pool.filter(i=>divOf(i)===d).length>=3)),same=shuffle(pool.filter(i=>divOf(i)===dv)).slice(0,3),odd=pickR(pool.filter(i=>divOf(i)!==dv)),O=shuffle([...same,odd]);OD.n++;
+  out.innerHTML=`<div class="stats">${stat("Round",`${OD.n} of 10`,"")}${stat("Score",fmtN(OD.score),"")}</div><div class="oddg">${O.map(i=>`<button type="button" class="oddc qo" data-i="${i}">${tailSVG(i,"oddsvg")}<b>${esc(AL[i].name)}</b><span>${esc(country(AL[i].country))}</span></button>`).join("")}</div><div id="qr"></div>`;
+  out.querySelectorAll(".oddc").forEach(b=>b.onclick=()=>{const ok=+b.dataset.i===odd;if(ok)OD.score++;
+    out.querySelectorAll(".oddc").forEach(x=>{x.disabled=true;const i=+x.dataset.i;x.insertAdjacentHTML("beforeend",`<em style="color:${divOf(i).color}">${esc(divShort(i))}</em>`);if(i===odd)x.classList.add("right");else if(x===b)x.classList.add("wrong");});
+    $("qr").innerHTML=`<p class="qres ${ok?"ok":"bad"}">${ok?"Right.":"Not quite."} ${esc(AL[odd].name)} is in ${esc(divOf(odd).name)}; the others are ${esc(dv.name)}.</p><button type="button" class="btn prim" id="nx">${OD.n>=10?"See score":"Next four"}</button>`;$("nx").onclick=odRound;$("nx").focus();});}
+
+/* ---- pin the airport ---- */
+const PN={n:0,pts:0};
+async function viewPin(){$("main").innerHTML=gameHead("Pin","the airport","Five airports Echo flies to. Tap the map where each one is: 100 points for a bullseye, fewer the further off you are.")+`<div class="out" id="out"><div class="loading"><i></i><i></i><i></i> Loading the map…</div></div>`;
+  try{await geoLibs();}catch(e){$("out").innerHTML=`<p class="err">The map couldn't load. Check your connection and try again.</p>`;return;}
+  if(!$("out"))return;PN.n=0;PN.pts=0;pnRound();}
+function pnRound(){const out=$("out");if(!out)return;
+  if(PN.n>=5){best.set("pin",PN.pts);out.innerHTML=`<div class="stats">${stat("Your score",`${PN.pts} of 500`,PN.pts>=420?"a walking atlas":PN.pts>=250?"good sense of place":"the world is big",true)}${stat("Best",`${best.get("pin")} of 500`,"")}</div><button type="button" class="btn prim" id="nx">Play again</button>`;$("nx").onclick=()=>{PN.n=0;PN.pts=0;pnRound();};return;}
+  const ans=pickR(apBusy().slice(0,300).map(x=>x[0])),W=960,H=500,proj=d3.geoEqualEarth().fitExtent([[6,6],[W-6,H-6]],{type:"Sphere"}),path=d3.geoPath(proj);PN.n++;
+  out.innerHTML=`<div class="stats">${stat("Round",`${PN.n} of 5`,"")}${stat("Points",fmtN(PN.pts),"")}</div>
+  <p class="pinq"><b>${ans}</b> ${esc(cityOf(ans))}, ${esc(country(AP[ans].cc))}</p>
+  <div class="mapbox pinbox"><svg id="pm" viewBox="0 0 ${W} ${H}" role="img" aria-label="World map: tap where the airport is"><path class="sphere" d="${path({type:"Sphere"})}"/><path class="land" d="${path(GEO.land)}"/><g id="pg"></g></svg></div><div id="qr"><p class="note">Tap the map.</p></div>`;
+  const svg=$("pm");let done=false;
+  svg.onclick=e=>{if(done)return;const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;const p=pt.matrixTransform(svg.getScreenCTM().inverse()),ll=proj.invert([p.x,p.y]);
+    if(!ll||!isFinite(ll[0])||!isFinite(ll[1])||Math.abs(ll[0])>180||Math.abs(ll[1])>90)return;done=true;
+    const real=[AP[ans].lo,AP[ans].la],k=Math.round(d3.geoDistance(ll,real)*6371),pts=k<=100?100:Math.max(0,Math.round(100*(1-(k-100)/3900)));PN.pts+=pts;
+    const rp=proj(real),line=path({type:"LineString",coordinates:[ll,real]});
+    $("pg").innerHTML=`${line?`<path class="pinline" d="${line}"/>`:""}<circle class="pinyou" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="6"/><circle class="pinreal" cx="${rp[0].toFixed(1)}" cy="${rp[1].toFixed(1)}" r="7"/><text class="pinlbl" x="${(rp[0]+10).toFixed(1)}" y="${(rp[1]+4).toFixed(1)}">${ans}</text>`;
+    $("qr").innerHTML=`<p class="qres ${pts>=70?"ok":"bad"}">${k<=100?"Bullseye!":`${dist(k)} off.`} <b>${pts}</b> point${pts===1?"":"s"}.</p><button type="button" class="btn prim" id="nx">${PN.n>=5?"See score":"Next airport"}</button>`;$("nx").onclick=pnRound;$("nx").focus();};}
+
+/* ---- flight time ---- */
+const FT={n:0,pts:0};
+function viewFlightTime(){$("main").innerHTML=gameHead("Flight","time","Five Echo routes. How long does the flight take? Slide to your guess: the closer, the more points.")+`<div class="out" id="out"></div>`;FT.n=0;FT.pts=0;ftRound();}
+function ftRound(){const out=$("out");
+  if(FT.n>=5){best.set("flighttime",FT.pts);out.innerHTML=`<div class="stats">${stat("Your score",`${FT.pts} of 500`,FT.pts>=420?"you could be dispatch":FT.pts>=300?"good instincts":"time flies",true)}${stat("Best",`${best.get("flighttime")} of 500`,"")}</div><button type="button" class="btn prim" id="nx">Play again</button>`;$("nx").onclick=()=>{FT.n=0;FT.pts=0;ftRound();};return;}
+  let a,b,real=null,t=0;do{[a,b]=pickR(busyPairs())[0].split("|");real=pairDur(a,b);t++;}while((!real||real<40)&&t<50);if((Math.random()<0.5))[a,b]=[b,a];real=pairDur(a,b);FT.n++;
+  out.innerHTML=`<div class="stats">${stat("Round",`${FT.n} of 5`,"")}${stat("Points",fmtN(FT.pts),"")}</div>
+  <div class="codebox"><p class="pair"><b>${a}</b> ${esc(cityOf(a))}<span class="sub">${esc(country(AP[a].cc))}</span></p><p class="pairto">to</p><p class="pair"><b>${b}</b> ${esc(cityOf(b))}<span class="sub">${esc(country(AP[b].cc))}</span></p>
+  <label class="slide"><span id="gv">5h 00m</span><input type="range" id="gk" min="30" max="1200" step="5" value="300" aria-label="Your guess, flight time"></label><button type="button" class="btn prim" id="go">Lock it in</button><div id="qr"></div></div>`;
+  const s=$("gk");s.oninput=()=>{$("gv").textContent=dur(+s.value);};
+  $("go").onclick=()=>{const g=+s.value,err=Math.abs(g-real),p=Math.max(0,Math.round(100-err/Math.max(real,60)*100));FT.pts+=p;s.disabled=true;$("go").disabled=true;
+    $("qr").innerHTML=`<p class="qres ${p>=70?"ok":"bad"}">${dur(real)} on Echo's timetable. You said ${dur(g)}: <b>${p}</b> point${p===1?"":"s"}.</p><p class="note">${dist(km(a,b))}, ${fmtN([...(pairIndex().get(pairKey(a,b))||new Map()).values()].reduce((x,y)=>x+y,0))} Echo flights a week.</p><button type="button" class="btn prim" id="nx">${FT.n>=5?"See score":"Next route"}</button>`;$("nx").onclick=ftRound;$("nx").focus();};}
+
+/* ---------- Echo Elysium: the realism division's toolkit ---------- */
+const ELY=[["curfew","Curfew check","Flights landing or leaving during the night curfews and restrictions at airports that have them."],
+  ["hours","Passenger-friendly times","Flights at 1 to 5 in the morning, and long-hauls landing at awkward hours, with a better time to leave."],
+  ["regs","Registration check","Your planes' registrations against your airline's country: N- for the US, G- for the UK, VH- for Australia."],
+  ["fltno","Flight number check","Numbers used twice, returns that break the odd-out, even-back habit, long-hauls on four-digit numbers."],
+  ["turns","Turnaround check","Each plane's day across all its routes: turns shorter than its type needs, and planes that aren't where their next flight leaves."],
+  ["runway","Runway crowding","Where several Elysium flights leave the same airport in the same minute, which a real runway can't take."],
+  ["slots","Slot finder","Echo departures in every five-minute slot at an airport, so you can pick an empty one."],
+  ["waves","Hub waves","Your arrivals and departures hour by hour, what connects, and the departures that just miss a feeder."]];
+const isEly=ai=>divOf(ai).code==="elysium";
+const ELYONLY=(()=>{try{return localStorage.getItem("echo_tb_elyonly")==="1";}catch(_){return false;}})();
+function setElyOnly(on){try{localStorage.setItem("echo_tb_elyonly",on?"1":"0");}catch(_){}location.reload();}
+function viewElysium(){
+  const dv=DIVS.find(d=>d.code==="elysium"),n=dv?dv.count:0;
+  $("main").innerHTML=`<div class="head"><h2>Echo <em style="color:var(--ely)">Elysium</em></h2></div><p class="lede">The realism division's toolkit: checks a real airline would make before a schedule goes out. They work for any Echo airline; most look at all of Elysium when you leave the airline empty.</p>
+  <div class="elyswitch"><div><b>Elysium only</b><span>Every tool and game on AirTools uses just Elysium's ${fmtN(n)} airlines and their flights.</span></div><button type="button" class="tog${ELYONLY?" on":""}" id="eo" role="switch" aria-checked="${ELYONLY}"><i></i></button></div>
+  <div class="tools ely">${ELY.map(([k,nm,p],i)=>`<a class="tool" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}</span><h3>${esc(nm)}</h3><p>${esc(p)}</p></a>`).join("")}</div>`;
+  $("eo").onclick=()=>setElyOnly(!ELYONLY);}
+/* airline box that can be left empty for "all of Elysium" */
+const elyAl=(q)=>alIn("al","Airline <small>empty = all of Elysium</small>",alVal(q));
+function elyPick(out,pick,again){const v=$("al").value.trim();if(!v&&pick==null)return {all:true,list:AL.map((a,i)=>i).filter(isEly)};
+  const me=alResolve(out,$("al"),pick,again);if(me==null)return null;$("al").value=AL[me].name;return {all:false,me,list:[me]};}
+const wdOf=(c,t)=>mod(localDay(c,t)+3,7),lmin=(c,t)=>mod(localMin(c,t),1440);
+const inWin=(m,[a,b])=>a<=b?m>=a&&m<b:m>=a||m<b;
+const hm=s=>{const [h,m]=s.split(":").map(Number);return h*60+m;};
+
+/* ---- 1. curfews (approximate: the well-known ones) ---- */
+const CURFEW={FRA:["23:00","05:00","curfew"],MUC:["00:00","05:00","curfew"],BER:["00:00","05:00","curfew"],HAM:["23:00","06:00","curfew"],DUS:["23:00","06:00","curfew"],STR:["23:30","06:00","curfew"],
+  ZRH:["23:30","06:00","curfew"],GVA:["00:00","06:00","curfew"],ORY:["23:30","06:00","curfew"],LCY:["22:30","06:30","curfew"],LIN:["23:00","06:00","curfew"],
+  LHR:["23:30","06:00","night quota"],LGW:["23:30","06:00","night quota"],STN:["23:30","06:00","night quota"],AMS:["23:00","07:00","night limits"],BRU:["23:00","06:00","night limits"],
+  SYD:["23:00","06:00","curfew"],ADL:["23:00","06:00","curfew"],WLG:["00:00","06:00","curfew"],NRT:["00:00","06:00","curfew"],ITM:["21:00","07:00","curfew"],FUK:["22:00","07:00","curfew"],
+  GMP:["23:00","06:00","curfew"],CGH:["23:00","06:00","curfew"],SDU:["23:00","06:00","curfew"],YTZ:["23:00","06:45","curfew"],YYZ:["00:30","06:30","night limits"],
+  SNA:["22:00","07:00","curfew"],BUR:["22:00","07:00","night limits"],LGB:["22:00","07:00","curfew"],SAN:["23:30","06:30","curfew"],DCA:["22:00","07:00","night limits"]};
+function viewCurfew(){const q=Q();$("main").innerHTML=head("Curfew","check","Flights leaving or landing inside the night curfews and restrictions at airports that have them.")+
+  `<form class="f" id="f">${elyAl(q)}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;
+  alList();$("f").onsubmit=e=>{e.preventDefault();runCurfew();};runCurfew(q.get("al")!=null?+q.get("al"):undefined);}
+function runCurfew(pick){const out=$("out");
+  const P=elyPick(out,pick,i=>runCurfew(i));if(!P)return;setQ("curfew",P.all?{}:{al:P.me});
+  const S=new Set(P.list),hits=[];
+  for(const r of ROT){if(!S.has(r.ai))continue;for(const l of weekLegs(r)){
+    const cd=CURFEW[l.from],ca=CURFEW[l.to],dm=lmin(l.from,l.t),am=lmin(l.to,l.t+l.dur);
+    if(cd&&inWin(dm,[hm(cd[0]),hm(cd[1])]))hits.push({l,ai:r.ai,at:l.from,kind:"leaves",m:dm,c:cd,ac:r.ac});
+    if(ca&&inWin(am,[hm(ca[0]),hm(ca[1])]))hits.push({l,ai:r.ai,at:l.to,kind:"lands",m:am,c:ca,ac:r.ac});}}
+  const strict=hits.filter(h=>h.c[2]==="curfew"),byAp=new Map();hits.forEach(h=>byAp.set(h.at,(byAp.get(h.at)||0)+h.l.days.size));
+  hits.sort((p,q)=>(p.c[2]==="curfew"?0:1)-(q.c[2]==="curfew"?0:1)||p.at.localeCompare(q.at)||p.m-q.m);
+  out.innerHTML=`<div class="stats">${stat("Inside a curfew",fmtN(strict.length),"flights, where night flights are banned",true)}${stat("Night limits",fmtN(hits.length-strict.length),"flights where night slots are rationed")}
+  ${stat("Airports",fmtN(byAp.size),"with night flights")}${stat("Checked",P.all?"Elysium":esc(AL[P.me].name),P.all?`${fmtN(P.list.length)} airlines`:"")}</div>
+  ${hits.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Flight</th>${P.all?"<th>Airline</th>":""}<th>At</th><th class="r">Local time</th><th>Rule there</th><th>Days</th></tr></thead><tbody>
+  ${hits.slice(0,80).map(h=>`<tr><td><b>${esc(fnOf(h.ai,h.l.fn))}</b> ${h.l.from}–${h.l.to}</td>${P.all?`<td>${esc(AL[h.ai].name)}</td>`:""}<td>${h.kind} ${esc(apName(h.at))}</td><td class="r">${hhmm(h.m)}</td><td class="${h.c[2]==="curfew"?"bad":""}">${h.c[2]==="curfew"?"Curfew":"Night limits"} ${h.c[0]}–${h.c[1]}</td><td>${daysTxt(h.l.days)}</td></tr>`).join("")}</tbody></table></div>${hits.length>80?`<p class="note">The first 80 of ${fmtN(hits.length)}.</p>`:""}`:`<p class="note">No flights at night at any airport on the list. Nicely done.</p>`}
+  <p class="note">Hours are local and approximate, for ${fmtN(Object.keys(CURFEW).length)} well-known airports: ${Object.keys(CURFEW).join(", ")}. "Curfew" means the airport bans normal night flights; "night limits" (Heathrow's night quota, say) means a few are allowed. Real rules have exceptions for delays and some aircraft.</p>`;}
+
+/* ---- 2. passenger-friendly times ---- */
+function viewHours(){const q=Q();$("main").innerHTML=head("Passenger-friendly","times","Flights leaving or landing between 1 and 5 in the morning local time, and long-hauls landing at awkward hours, with a departure time that would land at breakfast instead.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;
+  alList();$("f").onsubmit=e=>{e.preventDefault();runHours();};if(q.get("al")!=null||q.get("q"))runHours(q.get("al")!=null?+q.get("al"):undefined);}
+function runHours(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runHours(i));if(me==null)return;$("al").value=AL[me].name;setQ("hours",{al:me});
+  const L=[];for(const r of ROT){if(r.ai!==me)continue;for(const l of weekLegs(r))L.push(l);}if(!L.length)return noRoutes(out,me);
+  const bad=[];let ok=0;
+  for(const l of L){const dm=lmin(l.from,l.t),am=lmin(l.to,l.t+l.dur),dB=dm>=60&&dm<300,aB=am>=60&&am<300;
+    if(!dB&&!aB){ok++;continue;}
+    /* a time that lands 07:00 local (long-haul) or leaves 07:00 (short), keeping the same block time */
+    let sug=null;if(aB){const shift=(7*60-am+1440)%1440;sug=mod(dm+shift,1440);if(sug>=60&&sug<300)sug=null;}else{sug=7*60;}
+    bad.push({l,dm,am,dB,aB,sug});}
+  bad.sort((p,q)=>q.l.dur-p.l.dur);const pct=Math.round(ok/L.length*100);
+  out.innerHTML=`<div class="stats">${stat("Friendly",pct+"%","of your flights leave and land between 5 AM and 1 AM",true)}${stat("Small hours",fmtN(bad.length),"flights at 1 to 5 AM")}
+  ${stat("Landing then",fmtN(bad.filter(b=>b.aB).length),"arrive 1 to 5 AM")}${stat("Leaving then",fmtN(bad.filter(b=>b.dB).length),"depart 1 to 5 AM")}</div>
+  ${bad.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Flight</th><th class="r">Leaves</th><th class="r">Lands</th><th class="r">Block</th><th>Better</th><th>Days</th></tr></thead><tbody>
+  ${bad.slice(0,60).map(b=>`<tr><td><b>${esc(fnOf(me,b.l.fn))}</b> ${b.l.from}–${b.l.to}</td><td class="r ${b.dB?"bad":""}">${hhmm(b.dm)}</td><td class="r ${b.aB?"bad":""}">${hhmm(b.am)}</td><td class="r">${dur(b.l.dur)}</td><td>${b.sug!=null?`leave ${hhmm(b.sug)} → lands ${hhmm(b.sug+(b.am-b.dm+1440)%1440)}`:"—"}</td><td>${daysTxt(b.l.days)}</td></tr>`).join("")}</tbody></table></div>${bad.length>60?`<p class="note">The 60 longest of ${fmtN(bad.length)}.</p>`:""}`:`<p class="note">Every flight leaves and lands at a time passengers would book.</p>`}
+  <p class="note">Times are local at each airport. Real airlines do fly some red-eyes and early bank departures; this just shows where yours are. A new time also moves the rest of that plane's day, so check it in the Rotation planner.</p>`;}
+
+/* ---- 3. registrations ---- */
+const REGP={US:["N"],GB:["G"],DE:["D"],FR:["F"],IT:["I"],ES:["EC"],PT:["CS","CR"],NL:["PH"],BE:["OO"],CH:["HB"],AT:["OE"],IE:["EI","EJ"],DK:["OY"],NO:["LN"],SE:["SE"],FI:["OH"],IS:["TF"],PL:["SP"],CZ:["OK"],SK:["OM"],HU:["HA"],RO:["YR"],BG:["LZ"],GR:["SX"],TR:["TC"],RU:["RA","RF"],UA:["UR"],BY:["EW"],KZ:["UP"],UZ:["UK"],AZ:["4K"],GE:["4L"],AM:["EK"],IL:["4X"],AE:["A6"],QA:["A7"],BH:["A9C"],OM:["A4O"],SA:["HZ"],KW:["9K"],JO:["JY"],LB:["OD"],EG:["SU"],MA:["CN"],DZ:["7T"],TN:["TS"],LY:["5A"],ET:["ET"],KE:["5Y"],TZ:["5H"],UG:["5X"],RW:["9XR"],NG:["5N"],GH:["9G"],SN:["6V"],CI:["TU"],ZA:["ZS","ZT","ZU"],ZW:["Z"],ZM:["9J"],AO:["D2"],MZ:["C9"],MG:["5R"],MU:["3B"],SC:["S7"],IN:["VT"],PK:["AP"],BD:["S2"],LK:["4R"],NP:["9N"],MV:["8Q"],AF:["YA"],IR:["EP"],IQ:["YI"],CN:["B"],HK:["B"],MO:["B"],TW:["B"],JP:["JA"],KR:["HL"],KP:["P"],MN:["JU"],VN:["VN"],TH:["HS"],MY:["9M"],SG:["9V"],ID:["PK"],PH:["RP"],KH:["XU"],LA:["RDPL"],MM:["XY","XZ"],BN:["V8"],AU:["VH"],NZ:["ZK","ZL","ZM"],FJ:["DQ"],PG:["P2"],CA:["C","CF","CG"],MX:["XA","XB","XC"],GT:["TG"],CR:["TI"],PA:["HP"],CU:["CU"],DO:["HI"],JM:["6Y"],BS:["C6"],CO:["HK"],VE:["YV"],EC:["HC"],PE:["OB"],BO:["CP"],CL:["CC"],AR:["LV","LQ"],UY:["CX"],PY:["ZP"],BR:["PP","PR","PS","PT","PU"],LU:["LX"],MT:["9H"],CY:["5B"],HR:["9A"],SI:["S5"],RS:["YU"],BA:["E7"],ME:["4O"],MK:["Z3"],AL:["ZA"],EE:["ES"],LV:["YL"],LT:["LY"],MD:["ER"],KG:["EX"],TJ:["EY"],TM:["EZ"],SY:["YK"],YE:["7O"],SD:["ST"],CM:["TJ"],BW:["A2"],NA:["V5"],MW:["7Q"],SZ:["3DC"],CV:["D4"],GN:["3X"],ML:["TZ"],NE:["5U"],BF:["XT"],TD:["TT"],CF:["TL"],CG:["TN"],CD:["9S"],GA:["TR"],GQ:["3C"],BJ:["TY"],TG:["5V"],LR:["A8"],SL:["9L"],GM:["C5"],MR:["5T"],SO:["6O"],DJ:["J2"],ER:["E3"],SS:["Z8"],BT:["A5"],TL:["4W"],BB:["8P"],TT:["9Y"],HT:["HH"],HN:["HR"],NI:["YN"],SV:["YS"],BZ:["V3"],GY:["8R"],SR:["PZ"],AW:["P4"],CW:["PJ"],KY:["VP-C"],BM:["VP-B","VQ-B"],VG:["VP-L"],IM:["M"],GG:["2"],JE:["ZJ"]};
+function regPrefix(reg){reg=String(reg||"").toUpperCase().trim();if(!reg)return null;
+  const h=reg.indexOf("-");if(h>0)return reg.slice(0,h);const m=reg.match(/^(N|JA|HL|UR|RA|B)(?=[0-9A-Z])/);return m?m[1]:null;}
+function regFits(reg,cc){const P=REGP[cc];if(!P)return null;const R=String(reg||"").toUpperCase();
+  return P.some(p=>p==="N"?/^N[1-9]/.test(R):p==="JA"?/^JA[0-9]/.test(R):p==="HL"?/^HL[0-9]/.test(R):p==="B"?/^B-?[0-9A-Z]/.test(R)&&!/^B[A-Z]{2}-/.test(R):R.startsWith(p+"-")||(p.includes("-")&&R.startsWith(p)));}
+function regCountry(reg){const R=String(reg||"").toUpperCase();let best=null,len=0;
+  for(const [cc,P] of Object.entries(REGP))for(const p of P){const ok=p==="N"?/^N[1-9]/.test(R):p==="JA"?/^JA[0-9]/.test(R):p==="HL"?/^HL[0-9]/.test(R):R.startsWith(p+"-")||(p.includes("-")&&R.startsWith(p));if(ok&&p.length>len){best=cc;len=p.length;}}return best;}
+function viewRegs(){const q=Q();$("main").innerHTML=head("Registration","check","Each plane's registration against your airline's country. Real airlines register their planes at home, with that country's letters at the front.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;
+  alList();$("f").onsubmit=e=>{e.preventDefault();runRegs();};if(q.get("al")!=null||q.get("q"))runRegs(q.get("al")!=null?+q.get("al"):undefined);}
+function runRegs(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runRegs(i));if(me==null)return;$("al").value=AL[me].name;setQ("regs",{al:me});
+  const cc=AL[me].country,acs=[...new Set(ROT.filter(r=>r.ai===me&&r.ac>=0&&ACL[r.ac]).map(r=>r.ac))];
+  if(!acs.length){out.innerHTML=`<p class="note">${esc(AL[me].name)} has no registered aircraft in the timetable.</p>`;return;}
+  if(!REGP[cc]){out.innerHTML=`<p class="note">AirTools doesn't know the registration letters for ${esc(country(cc)||"this airline's country")} yet.</p>`;return;}
+  const bad=acs.filter(ac=>!regFits(ACL[ac][1],cc)).map(ac=>({ac,reg:ACL[ac][1],from:regCountry(ACL[ac][1])}));
+  const by=new Map();bad.forEach(b=>by.set(b.from||"?",(by.get(b.from||"?")||0)+1));
+  out.innerHTML=`<div class="stats">${stat("Registered at home",Math.round((acs.length-bad.length)/acs.length*100)+"%",`${fmtN(acs.length-bad.length)} of ${fmtN(acs.length)} planes`,true)}${stat("Home letters",esc(REGP[cc].join(" / ")),esc(country(cc)))}
+  ${stat("Elsewhere",fmtN(bad.length),"planes")}${stat("Most common",by.size?esc([...by].sort((p,q)=>q[1]-p[1])[0][0]==="?"?"unknown":country([...by].sort((p,q)=>q[1]-p[1])[0][0])):"—","for the others")}</div>
+  ${bad.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Registration</th><th>Aircraft</th><th>Looks like</th></tr></thead><tbody>${bad.slice(0,80).map(b=>`<tr><td class="mono">${esc(b.reg)}</td><td>${esc(acModel(b.ac))}</td><td>${b.from?esc(country(b.from)):"no country's letters"}</td></tr>`).join("")}</tbody></table></div>${bad.length>80?`<p class="note">The first 80 of ${fmtN(bad.length)}.</p>`:""}`:`<p class="note">Every plane carries ${esc(country(cc))}'s letters.</p>`}
+  <p class="note">Leased planes and airlines with foreign subsidiaries do sometimes fly other countries' registrations in real life. Hong Kong, Macau, Taiwan and mainland China all use B-.</p>`;}
+
+/* ---- 4. flight numbers ---- */
+function viewFltNo(){const q=Q();$("main").innerHTML=head("Flight number","check","How your flight numbers follow real airline habits: odd numbers out and the next even number back, one number per route, low numbers for long-haul flagships.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;
+  alList();$("f").onsubmit=e=>{e.preventDefault();runFltNo();};if(q.get("al")!=null||q.get("q"))runFltNo(q.get("al")!=null?+q.get("al"):undefined);}
+function runFltNo(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runFltNo(i));if(me==null)return;$("al").value=AL[me].name;setQ("fltno",{al:me});
+  const rows=ROT.filter(r=>r.ai===me);if(!rows.length)return noRoutes(out,me);
+  const use=new Map(),add=(n,a,b,dur)=>{if(n==null)return;const k=String(n);let x=use.get(k);if(!x){x={n,legs:new Set(),dur};use.set(k,x);}x.legs.add(a+"–"+b);};
+  const pairBad=[],long4=[];
+  for(const r of rows){const ifn=r.ifn!=null?r.ifn:r.fn+1;add(r.fn,r.A,r.B,r.dur);add(ifn,r.B,r.A,r.idur||r.dur);
+    if(r.C){const ci=r.cifn!=null?r.cifn:r.cfn+1;add(r.cfn,r.B,r.C,r.cdur);add(ci,r.C,r.B,r.cidur||r.cdur);}
+    const fine=(r.fn%2===1&&ifn===r.fn+1)||(r.fn%2===0&&ifn===r.fn-1)||(r.fn%2===0&&ifn===r.fn+1);
+    if(!fine)pairBad.push({r,ifn});if(r.dur>=360&&r.fn>=1000)long4.push(r);}
+  const dup=[...use.values()].filter(x=>x.legs.size>2||(x.legs.size===2&&(()=>{const [p,q]=[...x.legs];return p.split("–").reverse().join("–")!==q;})()));
+  const score=Math.round((rows.length-pairBad.length)/rows.length*100);
+  out.innerHTML=`<div class="stats">${stat("Odd out, even back",score+"%",`${fmtN(rows.length-pairBad.length)} of ${fmtN(rows.length)} routes`,true)}${stat("Used twice",fmtN(dup.length),"numbers on more than one route")}
+  ${stat("Long-haul, 4 digits",fmtN(long4.length),"flights over 6 hours numbered 1000+")}${stat("Numbers in use",fmtN(use.size),"")}</div>
+  ${dup.length?`<h4>Numbers on more than one route</h4><div class="scroll"><table class="tbl"><thead><tr><th>Flight</th><th>Routes</th></tr></thead><tbody>${dup.slice(0,40).map(x=>`<tr><td><b>${esc(fnOf(me,x.n))}</b></td><td>${[...x.legs].join(", ")}</td></tr>`).join("")}</tbody></table></div>`:""}
+  ${pairBad.length?`<h4>Return numbers off the habit</h4><div class="scroll"><table class="tbl"><thead><tr><th>Route</th><th>Out</th><th>Back</th><th>Usual</th></tr></thead><tbody>${pairBad.slice(0,40).map(x=>`<tr><td>${x.r.A}–${x.r.B}</td><td>${esc(fnOf(me,x.r.fn))}</td><td class="bad">${esc(fnOf(me,x.ifn))}</td><td>${esc(fnOf(me,x.r.fn%2?x.r.fn:x.r.fn-1))} / ${esc(fnOf(me,x.r.fn%2?x.r.fn+1:x.r.fn))}</td></tr>`).join("")}</tbody></table></div>${pairBad.length>40?`<p class="note">The first 40 of ${fmtN(pairBad.length)}.</p>`:""}`:""}
+  ${long4.length?`<h4>Long-hauls on four-digit numbers</h4><div class="chips">${long4.slice(0,30).map(r=>`<span class="chip">${esc(fnOf(me,r.fn))} ${r.A}–${r.B} · ${dur(r.dur)}</span>`).join("")}</div>`:""}
+  <p class="note">These are habits, not rules: plenty of real airlines break them. Four-digit numbers usually mean regional or codeshare flights; flagships get one to three digits.</p>`;}
+
+/* ---- 5. turnarounds ---- */
+function minTurn(model){const m=String(model||"").toUpperCase();
+  if(/A380|747/.test(m))return 90;if(/777|787|A350|A340|A330|767|MD-11|IL-96|A300|A310|DC-10|L-1011/.test(m))return 60;
+  if(/757|A321/.test(m))return 45;if(/ATR|DASH|Q400|DHC|SAAB|DORNIER|BEECH|JETSTREAM|TWIN OTTER|CESSNA|EMB-1|TURBO/.test(m))return 20;
+  if(/CRJ|E1[79]0|E19|E2|EMBRAER|ERJ|SUPERJET|SSJ|ARJ|C919|BAE|AVRO|FOKKER|A220|CS[13]00/.test(m))return 30;return 35;}
+function viewTurns(){const q=Q();$("main").innerHTML=head("Turnaround","check","Every plane's week across all its routes: turns shorter than its type needs on the ground, and planes that aren't at the airport their next flight leaves from.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;
+  alList();$("f").onsubmit=e=>{e.preventDefault();runTurns();};if(q.get("al")!=null||q.get("q"))runTurns(q.get("al")!=null?+q.get("al"):undefined);}
+function runTurns(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runTurns(i));if(me==null)return;$("al").value=AL[me].name;setQ("turns",{al:me});
+  const by=new Map(),d0=Math.floor(nowMin()/1440);
+  for(const r of ROT){if(r.ai!==me||r.ac<0)continue;for(let d=d0-1;d<d0+8;d++){if(!runsOn(r,d))continue;for(const l of legsOf(r,d)){let a=by.get(r.ac);if(!a){a=[];by.set(r.ac,a);}a.push(l);}}}
+  if(!by.size){out.innerHTML=`<p class="note">${esc(AL[me].name)} has no planes with routes in the timetable.</p>`;return;}
+  const short=[],tele=[],overl=[];
+  for(const [ac,L] of by){L.sort((p,q)=>p.t-q.t);const need=minTurn(acModel(ac)),seen=new Set();
+    for(let i=1;i<L.length;i++){const p=L[i-1],n=L[i];if(p.r===n.r||p.t+p.dur<d0*1440||n.t>=(d0+7)*1440)continue;   /* inside one route the game sets the times */const gap=n.t-(p.t+p.dur),k=p.fn+"|"+n.fn;if(seen.has(k))continue;seen.add(k);
+      if(gap<0)overl.push({ac,p,n,gap});else if(p.to!==n.from)tele.push({ac,p,n,gap});else if(gap<need)short.push({ac,p,n,gap,need});}}
+  const planes=by.size,okPl=[...by.keys()].filter(ac=>![...short,...tele,...overl].some(x=>x.ac===ac)).length;
+  const row=(x,why)=>`<tr><td class="mono">${esc(acReg(x.ac))}<span class="sub">${esc(acModel(x.ac))}</span></td><td>${esc(fnOf(me,x.p.fn))} ${x.p.from}–${x.p.to}, lands ${localTime(x.p.to,x.p.t+x.p.dur)}</td><td>${esc(fnOf(me,x.n.fn))} ${x.n.from}–${x.n.to}, leaves ${localTime(x.n.from,x.n.t)}</td><td class="bad">${why}</td></tr>`;
+  const tbl=(t,L,why)=>L.length?`<h4>${t}</h4><div class="scroll"><table class="tbl"><thead><tr><th>Plane</th><th>Lands from</th><th>Next flight</th><th>Problem</th></tr></thead><tbody>${L.slice(0,40).map(x=>row(x,why(x))).join("")}</tbody></table></div>${L.length>40?`<p class="note">The first 40 of ${fmtN(L.length)}.</p>`:""}`:"";
+  out.innerHTML=`<div class="stats">${stat("Clean planes",fmtN(okPl),`of ${fmtN(planes)}`,true)}${stat("Double-booked",fmtN(overl.length),"next flight leaves before it lands")}
+  ${stat("In the wrong place",fmtN(tele.length),"next flight leaves from elsewhere")}${stat("Short turns",fmtN(short.length),"less ground time than the type needs")}</div>
+  ${tbl("Double-booked",overl,x=>`overlaps by ${dur(-x.gap)}`)}${tbl("In the wrong place",tele,x=>`plane is at ${x.p.to}, flight leaves ${x.n.from}`)}${tbl("Short turns",short,x=>`${dur(x.gap)} on the ground, ${esc(acModel(x.ac))} needs about ${dur(x.need)}`)}
+  ${!overl.length&&!tele.length&&!short.length?`<p class="note">Every plane's week joins up, with enough time on the ground.</p>`:""}
+  <p class="note">This week's flights, plane by plane, across all its routes. Minimum turns are rough real-world figures: about 20 minutes for turboprops, 30 for regional jets, 35 for A320s and 737s, 45 for 757s and A321s, an hour for widebodies and 90 for the 747 and A380. Only the joins between different routes are checked: inside one route the game sets the times itself.</p>`;}
+
+/* ---- 6. runway crowding ---- */
+function viewRunway(){const q=Q(),wd=q.get("d")!=null?q.get("d"):String(todayWd());
+  $("main").innerHTML=head("Runway","crowding","Minutes when two or more Elysium flights leave the same airport. A real runway takes one departure every minute or two.")+
+  `<form class="f" id="f">${apIn("a","Airport <small>empty = all</small>",q.get("ap"))}<label>Day<select id="dy">${DAYN.map((d,i)=>`<option value="${i}"${String(i)===wd?" selected":""}>${d}</option>`).join("")}</select></label><button class="btn prim">Check</button></form><div class="out" id="out"></div>`;
+  apList();$("f").onsubmit=e=>{e.preventDefault();runRunway();};runRunway();}
+function runRunway(){const out=$("out"),typed=$("a").value.trim(),a=typed?apPick(typed):null,wd=+$("dy").value;
+  if(typed&&!a){out.innerHTML=`<p class="err">That isn't an airport any Echo airline flies to.</p>`;return;}if(a)$("a").value=a;setQ("runway",{ap:a||"",d:wd});
+  const M=new Map();
+  for(const r of ROT){if(!isEly(r.ai))continue;for(const l of weekLegs(r)){if(a&&l.from!==a)continue;if(!l.days.has(wd))continue;
+    const k=l.from+"|"+lmin(l.from,l.t);let x=M.get(k);if(!x){x=[];M.set(k,x);}x.push({ai:r.ai,l});}}
+  const clash=[...M].filter(([,x])=>x.length>=2).map(([k,x])=>{const [c,m]=k.split("|");return {c,m:+m,x};});
+  if(!a){const by=new Map();clash.forEach(z=>{const v=by.get(z.c)||{n:0,f:0};v.n++;v.f+=z.x.length;by.set(z.c,v);});const top=[...by].sort((p,q)=>q[1].n-p[1].n).slice(0,25);
+    out.innerHTML=`<div class="stats">${stat("Crowded minutes",fmtN(clash.length),`across Elysium on ${DAYN[wd]}`,true)}${stat("Airports",fmtN(by.size),"with at least one")}${stat("Worst",top.length?top[0][0]:"—",top.length?`${fmtN(top[0][1].n)} crowded minutes`:"")}</div>
+    ${top.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Airport</th><th class="r">Crowded minutes</th><th class="r">Flights in them</th><th></th></tr></thead><tbody>${top.map(([c,v])=>`<tr><td><b>${c}</b> ${esc(AP[c].city)}</td><td class="r">${fmtN(v.n)}</td><td class="r">${fmtN(v.f)}</td><td><a class="btn sm" href="#/runway?ap=${c}&d=${wd}">See them</a></td></tr>`).join("")}</tbody></table></div>`:`<p class="note">No two Elysium flights leave any airport in the same minute on ${DAYN[wd]}.</p>`}
+    <p class="note">Departures only, Elysium airlines only, local time. Big airports have several runways, so two at once there is less of a problem than at a one-runway airport.</p>`;return;}
+  clash.sort((p,q)=>p.m-q.m);
+  out.innerHTML=`<div class="stats">${stat("Crowded minutes",fmtN(clash.length),`at ${esc(apName(a))} on ${DAYN[wd]}`,true)}${stat("Flights in them",fmtN(clash.reduce((s,z)=>s+z.x.length,0)),"")}</div>
+  ${clash.length?`<div class="scroll"><table class="tbl"><thead><tr><th class="r">Time</th><th>Leaving together</th><th>Nearest free slot</th></tr></thead><tbody>${clash.map(z=>{let f=null;for(let d=5;d<=60&&f==null;d+=5){for(const s of [z.m+d,z.m-d]){const mm=mod(s,1440);if(!M.has(a+"|"+mm)){f=mm;break;}}}
+    return `<tr><td class="r"><b>${hhmm(z.m)}</b></td><td>${z.x.map(y=>`${esc(fnOf(y.ai,y.l.fn))} to ${y.l.to} <span class="sub" style="display:inline">${esc(AL[y.ai].name)}</span>`).join("<br>")}</td><td>${f!=null?hhmm(f):"—"}</td></tr>`;}).join("")}</tbody></table></div>`:`<p class="note">No two Elysium flights leave ${a} in the same minute on ${DAYN[wd]}.</p>`}
+  <p class="note">Elysium departures, local time. Game times go in five-minute steps, so the free slot is the nearest five-minute mark with no Elysium departure; the Slot finder shows all of Echo.</p>`;}
+
 /* ---------- motion helpers ----------
    Whatever a tool draws gets its order for the staggered entrances (--i), and the big numbers on
    the result cards count up from zero. Nothing moves for people who've asked for less motion. */
@@ -1538,7 +1850,6 @@ const TOOLS=[["route","Route checker","Who already flies a route, how often, and
   ["gaps","Route gaps","Busy airports nobody in Echo connects to your hub yet, and routes only one airline flies."],
   ["connect","Connection finder","A to B with one stop on Echo flights, with real waits at the stop."],
   ["time","Time converter","A time at one airport on another's clock, and when a flight lands."],
-  ["slots","Slot finder","Echo departures in every five-minute slot at an airport, so you can pick an empty one."],
   ["fleetuse","Fleet use","Planes flying and parked, and the hours each one flies a week."],
   ["rank","Where you rank","Your airline against your division and all of Echo, and who's just ahead."],
   ["reach","Range finder","Where a plane can go from your hub, by the routes Echo flies it on."],
@@ -1547,7 +1858,6 @@ const TOOLS=[["route","Route checker","Who already flies a route, how often, and
   ["vs","Head to head","You against a rival on the routes you both fly, and the ones each of you has alone."],
   ["airport","Airport profile","Who's based there, where Echo flies, which divisions and the busiest hours."],
   ["map","Network map","Any Echo airline's routes on a world map, with its hubs and busiest routes."],
-  ["waves","Hub waves","Your arrivals and departures hour by hour, what connects, and the departures that just miss a feeder."],
   ["stopover","Stopover builder","Too far to fly nonstop? The best airport to stop at, the detour and the whole round trip."],
   ["overlap","Division overlap","Where airlines in your own division fly your routes, and who you overlap with most."],
   ["changes","What changed","New and dropped routes at an airport since the last capture, and who joined or left."],
@@ -1563,9 +1873,9 @@ function viewHome(){
   <div class="tools">${TOOLS.map(([k,n,p],i)=>`<a class="tool" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}</span><h3>${esc(n)}</h3><p>${esc(p)}</p></a>`).join("")}</div>`;}
 function route(){
   const t=(location.hash.slice(2).split("?")[0])||"";
-  const isGame=t==="games"||GAMES.some(x=>x[0]===t);document.querySelectorAll("#nav a").forEach(a=>{const on=a.dataset.t===(isGame?"games":"tools");a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
-  const v={route:viewRoute,rotation:viewRotation,distance:viewDistance,numbers:viewNumbers,profit:viewProfit,partners:viewPartners,gaps:viewGaps,connect:viewConnect,time:viewTime,slots:viewSlots,fleetuse:viewFleetUse,rank:viewRank,reach:viewReach,day:viewDay,hubs:viewHubs,vs:viewVs,airport:viewAirport,map:viewMap,waves:viewWaves,stopover:viewStop,overlap:viewOverlap,changes:viewChanges,rightsize:viewRightsize,card:viewCard,export:viewExport,nexthub:viewNextHub,twins:viewTwins,quiz:viewQuiz,games:viewGames,higher:viewHigher,codes:viewCodes,guess:viewGuess,realroute:viewReal}[t]||viewHome;
-  if(location.hash!==route.last){const same=(route.lastT===t);route.last=location.hash;route.lastT=t;if(!same)scrollTo(0,0);v();if(TOOLS.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/">← All tools</a></p>`);const n=TOOLS.find(x=>x[0]===t)||GAMES.find(x=>x[0]===t)||(t==="games"?[t,"Games"]:null);document.title=n?`${n[1]} · Echo AirTools`:"Echo AirTools";}
+  const isGame=t==="games"||GAMES.some(x=>x[0]===t),isE=t==="elysium"||ELY.some(x=>x[0]===t);document.querySelectorAll("#nav a").forEach(a=>{const on=a.dataset.t===(isGame?"games":isE?"elysium":"tools");a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
+  const v={route:viewRoute,rotation:viewRotation,distance:viewDistance,numbers:viewNumbers,profit:viewProfit,partners:viewPartners,gaps:viewGaps,connect:viewConnect,time:viewTime,slots:viewSlots,fleetuse:viewFleetUse,rank:viewRank,reach:viewReach,day:viewDay,hubs:viewHubs,vs:viewVs,airport:viewAirport,map:viewMap,waves:viewWaves,stopover:viewStop,overlap:viewOverlap,changes:viewChanges,rightsize:viewRightsize,card:viewCard,export:viewExport,nexthub:viewNextHub,twins:viewTwins,quiz:viewQuiz,games:viewGames,higher:viewHigher,codes:viewCodes,guess:viewGuess,realroute:viewReal,daily:viewDaily,whoflies:viewWho,oddone:viewOdd,pin:viewPin,flighttime:viewFlightTime,elysium:viewElysium,curfew:viewCurfew,hours:viewHours,regs:viewRegs,fltno:viewFltNo,turns:viewTurns,runway:viewRunway}[t]||viewHome;
+  if(location.hash!==route.last){const same=(route.lastT===t);route.last=location.hash;route.lastT=t;if(!same)scrollTo(0,0);v();if(ELY.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/elysium">← Elysium</a></p>`);else if(TOOLS.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/">← All tools</a></p>`);const n=TOOLS.find(x=>x[0]===t)||ELY.find(x=>x[0]===t)||GAMES.find(x=>x[0]===t)||(t==="games"?[t,"Games"]:t==="elysium"?[t,"Elysium"]:null);document.title=n?`${n[1]} · Echo AirTools`:"Echo AirTools";}
 }
 addEventListener("hashchange",()=>{if(!document.body.classList.contains("locked")&&D)route();});
 (async()=>{
@@ -1577,6 +1887,7 @@ addEventListener("hashchange",()=>{if(!document.body.classList.contains("locked"
   if(!g.ok){showGate(g);return;}
   document.body.classList.remove("locked");if(g.u)showWho(g.u);if(bootP)bootP.textContent="Loading the Echo timetable…";
   try{await load();}catch(e){$("main").innerHTML=`<p class="err">The Echo timetable didn't load. Check your connection and reload the page.</p>`;console.error(e);return;}
+  if(ELYONLY){ROT=ROT.filter(r=>isEly(r.ai));document.getElementById("top").insertAdjacentHTML("afterend",`<div class="elybar">Elysium only: every tool and game is using just Elysium's airlines. <button type="button" class="linkbtn" id="eoff">Show all of Echo</button></div>`);$("eoff").onclick=()=>setElyOnly(false);}
   route.last=null;route.lastT=null;route();
 })();
 </script>
