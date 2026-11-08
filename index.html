@@ -275,7 +275,6 @@ body.locked #nav{visibility:hidden}
   <svg class="plane" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="#ece2ff"/></svg></div><p role="status">Loading the Echo timetable…</p></div></main>
 <footer>Made for Echo United Alliances members. Routes, times and registrations come from the same timetable as <a href="https://live.echoalliances.com/">Echo Live</a>, captured from the game; anything newer than the capture won't show yet.</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script>
 "use strict";
 /* ============================================================
@@ -1476,6 +1475,10 @@ new MutationObserver(ms=>{const roots=new Set();for(const m of ms)if([...m.added
    the Discord token to the airtools-gate function once, which asks Discord whether that account has
    the Resonants role in the EUA server and records the answer; later visits ask echo_tools_ok(),
    and after 7 days it asks them to sign in again so a removed role stops working. */
+/* switched off for now (7 Nov): set GATE_ON to true to bring the Resonants sign-in back. It also needs
+   AIRTOOLS_GUILD_ID / AIRTOOLS_ROLE_ID set on the airtools-gate function, and this site's address in
+   Supabase → Authentication → URL Configuration → Redirect URLs. */
+const GATE_ON=false;
 let SB=null;const GATE_FN=SB_URL+"/functions/v1/airtools-gate";
 function sbClient(){if(SB)return SB;if(!window.supabase)throw new Error("the sign-in library didn't load");
   SB=supabase.createClient(SB_URL,SB_KEY,{auth:{flowType:"pkce",persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,storageKey:"echo_airtools_auth"}});return SB;}
@@ -1483,6 +1486,7 @@ const store={get:k=>{try{return localStorage.getItem(k);}catch(_){return null;}}
   sget:k=>{try{return sessionStorage.getItem(k);}catch(_){return null;}},sset:(k,v)=>{try{v==null?sessionStorage.removeItem(k):sessionStorage.setItem(k,v);}catch(_){}}};
 const userName=u=>{const m=(u&&u.user_metadata)||{};return m.custom_claims&&m.custom_claims.global_name||m.full_name||m.name||m.user_name||"you";};
 async function gate(){
+  if(!window.supabase)await loadScript("https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js");
   const c=sbClient(),{data:{session}}=await c.auth.getSession();
   if(!session)return {ok:false,why:"none"};
   const u=session.user,disc=(u.identities||[]).some(i=>i.provider==="discord");
@@ -1565,12 +1569,13 @@ function route(){
 }
 addEventListener("hashchange",()=>{if(!document.body.classList.contains("locked")&&D)route();});
 (async()=>{
-  const bootP=$("main").querySelector(".boot p");if(bootP)bootP.textContent="Checking your Discord role…";
-  let g;try{g=await gate();}catch(e){console.error(e);g={ok:false,why:"unreachable"};}
+  const bootP=$("main").querySelector(".boot p");
+  let g={ok:true};
+  if(GATE_ON){if(bootP)bootP.textContent="Checking your Discord role…";try{g=await gate();}catch(e){console.error(e);g={ok:false,why:"unreachable"};}}
   /* back from Discord: tidy the sign-in code out of the address and go back to the tool they were on */
   if(/[?&]code=/.test(location.search)||location.search.includes("error=")){const back=store.sget("echo_tb_back");store.sset("echo_tb_back",null);history.replaceState(null,"",location.pathname+(back||location.hash||"#/"));}
   if(!g.ok){showGate(g);return;}
-  document.body.classList.remove("locked");showWho(g.u);if(bootP)bootP.textContent="Loading the Echo timetable…";
+  document.body.classList.remove("locked");if(g.u)showWho(g.u);if(bootP)bootP.textContent="Loading the Echo timetable…";
   try{await load();}catch(e){$("main").innerHTML=`<p class="err">The Echo timetable didn't load. Check your connection and reload the page.</p>`;console.error(e);return;}
   route.last=null;route.lastT=null;route();
 })();
