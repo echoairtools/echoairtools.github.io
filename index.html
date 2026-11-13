@@ -6,6 +6,9 @@
 <title>Echo AirTools</title>
 <meta name="description" content="Little tools for Echo United Alliances airlines: route checker, rotation planner, hub waves, stopovers, free flight numbers, seats and profit, and more.">
 <meta name="theme-color" content="#060507">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-title" content="AirTools">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='11' fill='%23060507'/%3E%3Cpath d='M30.3 15h10.6L24.5 29H15zM24.5 29.9h10.8l5.6 5.9H30.3z' fill='%23c4a1ff'/%3E%3C/svg%3E" type="image/svg+xml">
 <link rel="apple-touch-icon" href="https://live.echoalliances.com/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,6 +300,44 @@ pre.share{margin:0 0 14px;padding:12px 14px;border:1px solid var(--rule);border-
 .tog.on{background:var(--ely);border-color:var(--ely)}.tog.on i{transform:translateX(24px);background:#170a1a}
 .elybar{background:#2a1530;color:#f3c4ff;text-align:center;padding:8px 16px;font-size:14px;border-bottom:1px solid #4d2f55}
 .elybar .linkbtn{color:#fff}
+/* your airline, sharing, route builder, network shape, dots */
+.mybar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:0 0 18px;padding:12px 16px;border:1px solid var(--rule);border-radius:12px;background:var(--card);font-size:14.5px;color:var(--muted)}
+.mybar b{color:var(--ink)}.mybar input{flex:1;min-width:160px;max-width:260px}.mybar #inst{margin-left:auto}
+.back{display:flex;justify-content:space-between;align-items:center;gap:12px}.back .share{font-size:13.5px}
+.rb{border:1px solid var(--rule);border-radius:12px;background:var(--card);padding:12px 16px;margin:0 0 10px;animation:rise .4s cubic-bezier(.2,.8,.2,1) backwards}
+.rbh{margin:0 0 6px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.rbh b{font:400 22px/1.1 var(--display);color:var(--lav);letter-spacing:.02em}.rbh span{color:var(--muted)}
+.rbl{margin:4px 0 0;font-size:14px}
+.leg{display:block;margin:2px 0}
+.bar2{position:relative;height:12px;border-radius:6px;background:#24222a;margin:4px 0 18px;max-width:640px}.bar2 i{position:absolute;inset:0 auto 0 0;border-radius:6px;background:var(--ely)}
+.bar2 b{position:absolute;top:-4px;width:3px;height:20px;background:var(--cream);border-radius:2px;transform:translateX(-1px)}
+.trail{font-size:18px;margin:0 0 10px}.trail b{font:400 28px/1 var(--display);color:var(--lav)}
+.dotsf{margin:12px 0 0}
+.pickmy{cursor:pointer;font:inherit;color:inherit;margin:2px}
+/* batch 7 */
+.bb{display:flex;gap:16px;align-items:center}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px;align-self:center}
+.ck{display:flex!important;flex-direction:row!important;align-items:center;gap:8px;text-transform:none!important;letter-spacing:0!important;font:500 14px var(--ui)!important;color:var(--ink)!important;cursor:pointer}
+.ck input{width:18px;height:18px;accent-color:var(--lilac)}
+tr.pinrow td{background:#1d1726}
+.nowrap{white-space:nowrap}.planbtn{margin-left:6px}
+.pnote{width:100%;min-width:120px;padding:6px 8px;font-size:13.5px}
+.divhead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:6px 0 14px;padding-left:14px;border-left:4px solid var(--dc)}
+.divhead b{font:400 34px/1 var(--display);text-transform:uppercase;color:var(--lav)}.divhead span{color:var(--muted)}
+.okc{color:var(--good)}.badc{color:var(--warn)}
+.report{display:flex;align-items:center;gap:18px;margin:4px 0 18px}.report b{font:400 30px/1 var(--display);text-transform:uppercase;color:var(--lav)}
+.grade{display:flex;flex-direction:column;align-items:center;justify-content:center;width:96px;height:96px;border-radius:18px;border:2px solid currentColor;flex:none;animation:pop .45s cubic-bezier(.2,1.5,.4,1) backwards}
+.grade span{font:400 58px/1 var(--display)}.grade small{font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.grade.sm{width:52px;height:52px;border-radius:12px}.grade.sm span{font-size:30px}
+.gA{color:var(--good)}.gB{color:#a6e3a1}.gC{color:var(--cream)}.gD{color:#f5b971}.gF{color:var(--warn)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin-bottom:14px}
+.rc{display:flex;gap:14px;align-items:center;padding:12px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--card);text-decoration:none;color:var(--ink)}
+.rc:hover{border-color:var(--lilac)}.rc b{display:block}.rc small{color:var(--muted);font-size:13px}
+.dayfill{height:16px;border-radius:8px;background:#24222a;margin:0 0 14px;overflow:hidden}.dayfill i{display:block;height:100%;background:var(--lilac);transition:width .3s ease}.dayfill i.over{background:var(--warn)}
+.fdg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.fdc{display:flex;flex-direction:column;gap:3px;padding:12px;border:1px solid var(--rule);border-radius:12px;background:var(--card);color:var(--ink);cursor:pointer;font:inherit;text-align:left}
+.fdc b{font:400 20px/1 var(--display);color:var(--lav)}.fdc span{color:var(--muted);font-size:13px}.fdc em{font-style:normal;font-weight:700}
+.fdc.on{border-color:var(--lilac);background:#1d1726}.fdc:disabled{cursor:default}
+@media (max-width:640px){.fdg{grid-template-columns:1fr 1fr}.bb{gap:10px}}
 </style>
 </head>
 <body>
@@ -782,7 +823,7 @@ function runTime(){
 function alResolve(out,input,pick,again){if(pick!=null&&AL[pick])return pick;const m=alFind(input.value);
   if(!m.length){out.innerHTML=`<p class="err">No Echo airline is called that. Try its name or two-letter code.</p>`;return null;}
   if(m.length>1){alChoose(out,m,again);return null;}return m[0];}
-const alVal=q=>q.get("al")!=null&&AL[+q.get("al")]?AL[+q.get("al")].name:(q.get("q")||"");
+const alVal=q=>q.get("al")!=null&&AL[+q.get("al")]?AL[+q.get("al")].name:(q.get("q")||(typeof myAl==="function"&&myAl()!=null?AL[myAl()].name:""));
 const blockOf=r=>r.dur+(r.idur||r.dur)+(r.C?r.cdur+(r.cidur||r.cdur):0);
 
 /* ---------- 10. departure slot finder ---------- */
@@ -1323,29 +1364,52 @@ function runExport(pick){
   <p class="note">Every time is local at its own airport, as in the game. The spreadsheet opens in Excel, Google Sheets or Numbers.</p>`;
   $("pr").onclick=()=>{document.body.classList.add("print-tt");addEventListener("afterprint",()=>document.body.classList.remove("print-tt"),{once:true});print();};}
 
-/* ---------- 26. next hub finder ---------- */
+/* ---------- what airports can take: widebodies, and the biggest twins (A350-1000, 777-300ER/-9, 747, A380) ---------- */
+const HEAVY_RX=/A350-1000|777-3|777-9|777-8|747|A380/i,WIDE_RX=/A30|A31|A33|A34|A35|A38|767|777|787|747|MD-11|DC-10|L-1011|IL-96/i;
+let APCAP=null;
+function apCaps(){if(APCAP)return APCAP;APCAP=new Map();const cls=new Map();
+  for(const r of ROT){if(r.ac<0||!ACL[r.ac])continue;const t=ACL[r.ac][0];let k=cls.get(t);if(k==null){const nm=MODELS[t]||"";k=HEAVY_RX.test(nm)?2:WIDE_RX.test(nm)?1:0;cls.set(t,k);}if(!k)continue;
+    for(const [f,to,n] of rowLegs(r))for(const c of [f,to]){let x=APCAP.get(c);if(!x){x={wide:0,heavy:0};APCAP.set(c,x);}x.wide+=n;if(k===2)x.heavy+=n;}}return APCAP;}
+/* places with fighting or no normal air travel right now */
+const CONFLICT=new Set(["UA","RU","BY","IL","PS","SY","LB","YE","SD","SS","LY","IQ","AF","MM","SO","ML","HT","IR"]);
+const cityKey=c=>((AP[c].city||AP[c].name||c).split("/")[0].trim().toLowerCase());
+
+/* ---------- 26. next hub finder (with filters) ---------- */
 function viewNextHub(){
-  const q=Q();$("main").innerHTML=head("Next","hub","Where to open your next base: busy Echo airports away from your current hubs, ranked by how many busy places you don't serve yet would be within reach of them.")+
-  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<label>Reach from the new hub<select id="rg">${[["1500","1,500 km"],["3000","3,000 km"],["5000","5,000 km"]].map(([v,t])=>`<option value="${v}"${v===(q.get("rg")||"3000")?" selected":""}>${t}</option>`).join("")}</select></label><button class="btn prim">Find a hub</button></form><div class="out" id="out"></div>`;
-  alList();$("f").onsubmit=e=>{e.preventDefault();runNextHub();};if(q.get("al")!=null||q.get("q"))runNextHub(q.get("al")!=null?+q.get("al"):undefined);}
+  const q=Q(),ck=(k,d)=>(q.get(k)!=null?q.get(k)==="1":d)?" checked":"";
+  $("main").innerHTML=head("Next","hub","Where to open your next base: busy Echo airports away from your current hubs, ranked by how many busy places you don't serve yet would be within reach of them.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<label>Reach from the new hub<select id="rg">${[["1500","1,500 km"],["3000","3,000 km"],["5000","5,000 km"]].map(([v,t])=>`<option value="${v}"${v===(q.get("rg")||"3000")?" selected":""}>${t}</option>`).join("")}</select></label>
+  <label>Must already handle<select id="cap">${[["","Any plane"],["wide","Widebodies"],["heavy","A350-1000 / 777-300ER"]].map(([v,t])=>`<option value="${v}"${v===(q.get("cap")||"")?" selected":""}>${t}</option>`).join("")}</select></label>
+  ${apIn("pin","Put first <small>optional</small>",q.get("pin"))}
+  <div class="checks"><label class="ck"><input type="checkbox" id="nc"${ck("nc",true)}> Skip conflict zones</label><label class="ck"><input type="checkbox" id="oc"${ck("oc",true)}> One airport per city</label></div>
+  <button class="btn prim">Find a hub</button></form><div class="out" id="out"></div>`;
+  alList();apList();$("f").onsubmit=e=>{e.preventDefault();runNextHub();};if(q.get("al")!=null||q.get("q"))runNextHub(q.get("al")!=null?+q.get("al"):undefined);}
 function runNextHub(pick){
   const out=$("out"),me=alResolve(out,$("al"),pick,i=>runNextHub(i));if(me==null)return;$("al").value=AL[me].name;
-  const rg=+$("rg").value;setQ("nexthub",{al:me,rg});
+  const rg=+$("rg").value,cap=$("cap").value,nc=$("nc").checked,oc=$("oc").checked,pinT=$("pin").value.trim(),pin=pinT?apPick(pinT):null;
+  if(pinT&&!pin){out.innerHTML=`<p class="err">"${esc(pinT)}" isn't an airport Echo flies to.</p>`;return;}if(pin)$("pin").value=pin;
+  setQ("nexthub",{al:me,rg,cap,nc:nc?1:0,oc:oc?1:0,pin:pin||""});
   const served=new Set(),dep=new Map();for(const r of ROT){if(r.ai!==me)continue;for(const [f,t,n] of rowLegs(r)){served.add(f);served.add(t);dep.set(f,(dep.get(f)||0)+n);}}
   if(!served.size)return noRoutes(out,me);
   const hubs=[...new Set([...(AL[me].hubs||[]).filter(c=>AP[c]),...[...dep].sort((p,q)=>q[1]-p[1]).slice(0,3).map(x=>x[0])])];
-  const W=apWeek(),busy=[...W].filter(([c,n])=>n>=150&&AP[c]),based=new Map();AL.forEach(a=>(a.hubs||[]).forEach(c=>based.set(c,(based.get(c)||0)+1)));
+  const W=apWeek(),busy=[...W].filter(([c,n])=>n>=150&&AP[c]&&!(nc&&CONFLICT.has(AP[c].cc))),based=new Map(),CAP=apCaps();AL.forEach(a=>(a.hubs||[]).forEach(c=>based.set(c,(based.get(c)||0)+1)));
+  const capOk=c=>!cap||((CAP.get(c)||{})[cap]||0)>0;
+  const score=c=>{let s=0,cnt=0;for(const [t,m] of busy){if(t===c||served.has(t))continue;if(km(c,t)>rg||!legalPair(c,t))continue;s+=Math.sqrt(m);cnt++;}return {s,cnt};};
   const res=[];
-  for(const [c,n] of busy){if(n<400||hubs.includes(c))continue;const near=Math.min(...hubs.map(x=>km(x,c)));if(near<600)continue;
-    let s=0,cnt=0;for(const [t,m] of busy){if(t===c||served.has(t))continue;const k=km(c,t);if(k>rg||!legalPair(c,t))continue;s+=Math.sqrt(m);cnt++;}
-    if(cnt)res.push({c,n,near,s,cnt,mine:served.has(c)});}
-  res.sort((p,q)=>q.s-p.s);const top=res.slice(0,12);
-  if(!top.length){out.innerHTML=`<p class="note">No busy Echo airport away from your hubs adds new places within ${dist(rg)}.</p>`;return;}
-  out.innerHTML=`<div class="stats">${stat("Best pick",top[0].c,`${esc(AP[top[0].c].city)}, ${esc(country(AP[top[0].c].cc))}`,true)}${stat("New places in reach",fmtN(top[0].cnt),`busy Echo airports you don't fly to, within ${dist(rg)}`)}
+  for(const [c,n] of busy){if(n<400||hubs.includes(c)||c===pin||!capOk(c))continue;const near=Math.min(...hubs.map(x=>km(x,c)));if(near<600)continue;
+    const {s,cnt}=score(c);if(cnt)res.push({c,n,near,s,cnt,mine:served.has(c)});}
+  res.sort((p,q)=>q.s-p.s);
+  /* one per city: same city name, or within 50 km of one already listed */
+  const top=[];if(pin){const {s,cnt}=score(pin);top.push({c:pin,n:W.get(pin)||0,near:Math.min(...hubs.map(x=>km(x,pin))),s,cnt,mine:served.has(pin),pinned:true});}
+  for(const x of res){if(top.length>=12)break;if(oc&&top.some(y=>cityKey(y.c)===cityKey(x.c)||km(y.c,x.c)<50))continue;top.push(x);}
+  if(!top.length){out.innerHTML=`<p class="note">No busy Echo airport away from your hubs fits those filters within ${dist(rg)}.</p>`;return;}
+  const capTxt=c=>{const x=CAP.get(c)||{wide:0,heavy:0};return x.heavy?`${fmtN(x.heavy)} A35K/77W-class a week`:x.wide?`widebodies only (${fmtN(x.wide)} a week)`:"no widebodies yet";};
+  out.innerHTML=`<div class="stats">${stat(top[0].pinned?"Your pick":"Best pick",top[0].c,`${esc(AP[top[0].c].city)}, ${esc(country(AP[top[0].c].cc))}`,true)}${stat("New places in reach",fmtN(top[0].cnt),`busy Echo airports you don't fly to, within ${dist(rg)}`)}
   ${stat("Your hubs now",fmtN(hubs.length),hubs.slice(0,6).join(", "))}${stat("Airports you serve",fmtN(served.size),"")}</div>
-  <div class="scroll"><table class="tbl"><thead><tr><th>Airport</th><th class="r">New places in reach</th><th class="r">Its Echo departures a week</th><th class="r">Echo airlines based</th><th class="r">From your nearest hub</th><th></th></tr></thead><tbody>
-  ${top.map(x=>`<tr><td><b>${x.c}</b> ${esc(AP[x.c].city)}<span class="sub">${esc(AP[x.c].name)}, ${esc(country(AP[x.c].cc))}${x.mine?" · you already fly here":""}</span></td><td class="r">${fmtN(x.cnt)}</td><td class="r">${fmtN(x.n)}</td><td class="r">${fmtN(based.get(x.c)||0)}</td><td class="r">${dist(x.near)}</td><td><a class="btn sm" href="#/gaps?ap=${x.c}&rg=${rg>=5000?8000:rg>=3000?4000:1500}&al=${me}">Gaps</a></td></tr>`).join("")}</tbody></table></div>
-  <p class="note">"Busy" means 150+ Echo departures a week; a candidate needs 400+ and to be at least 600 km from your hubs (${hubs.join(", ")}). Places you already fly to don't count, and bigger airports count for more. Domestic-only airports only count places in their own country.</p>`;}
+  <div class="scroll"><table class="tbl"><thead><tr><th class="r">#</th><th>Airport</th><th class="r">New places in reach</th><th class="r">Echo departures a week</th><th>Big planes there</th><th class="r">Echo airlines based</th><th class="r">From your nearest hub</th><th></th></tr></thead><tbody>
+  ${top.map((x,i)=>`<tr${x.pinned?' class="pinrow"':""}><td class="r">${i+1}</td><td><b>${x.c}</b> ${esc(AP[x.c].city)}<span class="sub">${esc(AP[x.c].name)}, ${esc(country(AP[x.c].cc))}${x.mine?" · you already fly here":""}${x.pinned?" · your pick":""}</span></td><td class="r">${fmtN(x.cnt)}</td><td class="r">${fmtN(x.n)}</td><td>${capTxt(x.c)}</td><td class="r">${fmtN(based.get(x.c)||0)}</td><td class="r">${dist(x.near)}</td><td><a class="btn sm" href="#/gaps?ap=${x.c}&rg=${rg>=5000?8000:rg>=3000?4000:1500}&al=${me}">Gaps</a></td></tr>`).join("")}</tbody></table></div>
+  <p class="note">"Busy" means 150+ Echo departures a week; a candidate needs 400+ and to be at least 600 km from your hubs (${hubs.join(", ")}). "Big planes there" counts Echo flights by A350-1000, 777-300ER/777-9, 747 and A380 already using the airport: the timetable has no runway lengths, so that's the proof it can take them.${nc?` Conflict zones skipped: ${[...CONFLICT].map(c=>country(c)).filter(Boolean).join(", ")}.`:""}</p>`;}
+
 
 /* ---------- 27. network twins ---------- */
 function viewTwins(){
@@ -1403,7 +1467,7 @@ const best={get:k=>{try{return +localStorage.getItem("echo_tb_best_"+k)||0;}catc
 const cityOf=c=>((AP[c].city||AP[c].name||c).split("/")[0].trim());
 const pickR=a=>a[Math.floor(Math.random()*a.length)];
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
-const gameHead=(w1,w2,p)=>`<p class="back"><a href="#/games">← All games</a></p>`+head(w1,w2,p);
+const gameHead=(w1,w2,p)=>`<p class="back"><a href="#/games">← All games</a><span class="bb">${soundBtn()}</span></p>`+head(w1,w2,p);
 function gameCards(){return `<div class="tools games">${GAMES.map(([k,n,p],i)=>{const b=best.get(k);return `<a class="tool game" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}${b?` · best ${b}`:""}</span><h3>${esc(n)}</h3><p>${esc(p)}</p></a>`;}).join("")}</div>`;}
 function viewGames(){$("main").innerHTML=head("Echo","games","A break from planning: little games played with the real Echo timetable, liveries and airports. Best scores stay on this device.")+gameCards();}
 
@@ -1556,8 +1620,8 @@ function dailyEnd(res){const out=$("out"),n=res.filter(Boolean).length,d=new Dat
   const share=`Echo Daily ${date}: ${n}/5\n${res.map(x=>x?"🟩":"🟥").join("")}`;best.set("daily",n);
   out.innerHTML=`<div class="stats">${stat("Today",`${n} of 5`,n===5?"perfect":n>=3?"nicely done":"tomorrow's another day",true)}${stat("Best",`${best.get("daily")} of 5`,"")}</div>
   <div class="codebox"><p class="dailyrow">${res.map(x=>`<i class="${x?"y":"n"}"></i>`).join("")}</p><pre class="share" id="sh">${esc(share)}</pre>
-  <div class="row-btns"><button type="button" class="btn prim" id="cp">Copy for Discord</button><span class="note" id="cpm" style="margin:0"></span></div><p class="note">A new set comes at midnight UTC (${new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+1)).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})} your time).</p></div>`;
-  $("cp").onclick=async()=>{try{await navigator.clipboard.writeText(share);$("cpm").textContent="Copied.";}catch(_){const r=document.createRange();r.selectNodeContents($("sh"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("cpm").textContent="Selected. Press Ctrl+C to copy.";}};}
+  <div class="row-btns"><button type="button" class="btn prim" id="cp">Copy for Discord</button><span class="note" id="cpm" style="margin:0"></span></div><p class="note">A new set comes at midnight UTC (${new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate()+1)).toLocaleTimeString([],{hour:"numeric",minute:"2-digit"})} your time).</p></div><div id="board"><p class="note">Loading today's board…</p></div>`;
+  $("cp").onclick=async()=>{try{await navigator.clipboard.writeText(share);$("cpm").textContent="Copied.";}catch(_){const r=document.createRange();r.selectNodeContents($("sh"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("cpm").textContent="Selected. Press Ctrl+C to copy.";}};dailyBoard(res);}
 
 /* ---- who flies it? ---- */
 const WF={n:0,score:0};
@@ -1767,6 +1831,409 @@ function runRunway(){const out=$("out"),typed=$("a").value.trim(),a=typed?apPick
     return `<tr><td class="r"><b>${hhmm(z.m)}</b></td><td>${z.x.map(y=>`${esc(fnOf(y.ai,y.l.fn))} to ${y.l.to} <span class="sub" style="display:inline">${esc(AL[y.ai].name)}</span>`).join("<br>")}</td><td>${f!=null?hhmm(f):"—"}</td></tr>`;}).join("")}</tbody></table></div>`:`<p class="note">No two Elysium flights leave ${a} in the same minute on ${DAYN[wd]}.</p>`}
   <p class="note">Elysium departures, local time. Game times go in five-minute steps, so the free slot is the nearest five-minute mark with no Elysium departure; the Slot finder shows all of Echo.</p>`;}
 
+ELY.push(["spread","Frequency spread","Routes flown a few times a week on bunched-up days, and how to space them like a real airline."],
+  ["equip","Same flight, same plane","Flight numbers that switch aircraft type from day to day."],
+  ["shape","Network shape","How hub-and-spoke your network is, the routes that skip your hubs, and the Elysium average."]);
+GAMES.push(["whosenet","Whose network?","An airline's routes drawn on the map. Whose are they?"],
+  ["dots","Connect the dots","Get from one airport to another on real Echo flights in as few hops as you can."]);
+
+/* ---------- your airline, remembered on this device ---------- */
+const MYK="echo_tb_my";
+function myAl(){let u="";try{u=localStorage.getItem(MYK)||"";}catch(_){}if(!u)return null;const i=AL.findIndex(a=>a.uid===u);return i>=0?i:null;}
+function setMy(i){try{i==null?localStorage.removeItem(MYK):localStorage.setItem(MYK,AL[i].uid);}catch(_){}}
+function myBar(){const i=myAl();
+  return `<div class="mybar" id="mybar">${i!=null?`<span>Your airline: <b>${esc(AL[i].name)}</b>, filled in on every tool.</span><button type="button" class="linkbtn" id="mych">Change</button><button type="button" class="linkbtn" id="myclr">Forget it</button>`:
+    `<span>Set your airline and every tool starts with it.</span><input id="myin" list="als" autocomplete="off" spellcheck="false" placeholder="Starliner or SR"><button type="button" class="btn sm" id="mysv">Save</button>`}<span id="mymsg" class="note" style="margin:0"></span>
+    <button type="button" class="btn sm" id="inst" hidden>Install app</button></div>`;}
+function wireMyBar(){alList();const b=$("mybar");if(!b)return;
+  if($("mych"))$("mych").onclick=()=>{setMy(null);b.outerHTML=myBar();wireMyBar();$("myin").focus();};
+  if($("myclr"))$("myclr").onclick=()=>{setMy(null);b.outerHTML=myBar();wireMyBar();};
+  if($("mysv")){const save=()=>{const m=alFind($("myin").value);if(m.length===1){setMy(m[0]);b.outerHTML=myBar();wireMyBar();return;}
+      if(!m.length){$("mymsg").textContent="No Echo airline by that name.";return;}
+      /* several match (Scoot and SCOOT, say): pick one */
+      $("mymsg").innerHTML="Which one? "+m.slice(0,8).map(i=>`<button type="button" class="chip pickmy" data-i="${i}"><span class="dot" style="background:${divOf(i).color}"></span>${esc(AL[i].name)} · ${esc(divShort(i))}</button>`).join(" ");
+      $("mymsg").querySelectorAll(".pickmy").forEach(x=>x.onclick=()=>{setMy(+x.dataset.i);const bb=$("mybar");bb.outerHTML=myBar();wireMyBar();});};
+    $("mysv").onclick=save;$("myin").onkeydown=e=>{if(e.key==="Enter")save();};}
+  if(INSTALL&&$("inst")){$("inst").hidden=false;$("inst").onclick=async()=>{INSTALL.prompt();await INSTALL.userChoice.catch(()=>{});INSTALL=null;$("inst").hidden=true;};}}
+/* ---------- install as an app ---------- */
+let INSTALL=null;addEventListener("beforeinstallprompt",e=>{e.preventDefault();INSTALL=e;if($("inst"))wireMyBar();});
+if("serviceWorker" in navigator&&location.protocol==="https:")addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+/* ---------- copy a link to what you're looking at ---------- */
+function shareBtn(){return `<button type="button" class="linkbtn share" onclick="copyLink(this)">Copy link</button>`;}
+async function copyLink(b){try{await navigator.clipboard.writeText(location.href);b.textContent="Link copied";}catch(_){b.textContent=location.href;}setTimeout(()=>{if(b.isConnected)b.textContent="Copy link";},2200);}
+
+/* ---------- biggest movers ---------- */
+function viewMovers(){$("main").innerHTML=head("Biggest","movers","Which Echo airlines grew or shrank the most since the last timetable capture, by routes and flights a week.")+`<div class="out" id="out"><div class="loading"><i></i><i></i><i></i> Loading the changes…</div></div>`;runMovers();}
+async function runMovers(){const out=$("out");let C;try{C=await changes();}catch(e){out.innerHTML=`<p class="err">The list of changes isn't on Echo Live yet, so this can't show anything right now.</p>`;return;}
+  if(!$("out"))return;const M=new Map(),g=i=>{let x=M.get(i);if(!x){x={i,ra:0,rr:0,fa:0,fr:0};M.set(i,x);}return x;};
+  C.add.forEach(([i,,,n])=>{if(!AL[i])return;const x=g(i);x.ra++;x.fa+=n;});C.rem.forEach(([i,,,n])=>{if(!AL[i])return;const x=g(i);x.rr++;x.fr+=n;});
+  const L=[...M.values()].map(x=>Object.assign(x,{net:x.fa-x.fr,nr:x.ra-x.rr})),up=[...L].sort((p,q)=>q.net-p.net).filter(x=>x.net>0).slice(0,15),dn=[...L].sort((p,q)=>p.net-q.net).filter(x=>x.net<0).slice(0,15);
+  const R=rankData(),newb=C.joined.filter(i=>AL[i]&&R[i]).sort((p,q)=>R[q].flights-R[p].flights).slice(0,10);
+  const dv=new Map();L.forEach(x=>{const d=divOf(x.i).name;const v=dv.get(d)||{ra:0,rr:0,net:0};v.ra+=x.ra;v.rr+=x.rr;v.net+=x.net;dv.set(d,v);});
+  const f=s=>new Date(s+"T12:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"long"}),sg=n=>(n>0?"+":n<0?"−":"")+fmtN(Math.abs(n));
+  const tbl=(T)=>`<div class="scroll"><table class="tbl"><thead><tr><th>Airline</th><th class="r">Flights a week</th><th class="r">Routes added</th><th class="r">Routes dropped</th></tr></thead><tbody>${T.map(x=>`<tr><td>${alTag(x.i)}</td><td class="r ${x.net>0?"ok":"bad"}">${sg(x.net)}</td><td class="r">${fmtN(x.ra)}</td><td class="r">${fmtN(x.rr)}</td></tr>`).join("")}</tbody></table></div>`;
+  out.innerHTML=`<p class="status">Between <b>${f(C.from)}</b> and <b>${f(C.to)}</b></p>
+  <div class="stats">${stat("Biggest grower",up.length?esc(AL[up[0].i].name):"—",up.length?`${sg(up[0].net)} flights a week`:"",true)}${stat("Routes added",fmtN(C.add.length),"across Echo")}${stat("Routes dropped",fmtN(C.rem.length),"")}${stat("New to Echo",fmtN(C.joined.length),"airlines")}</div>
+  <h4>Growing</h4>${up.length?tbl(up):`<p class="note">Nobody grew.</p>`}<h4>Shrinking</h4>${dn.length?tbl(dn):`<p class="note">Nobody shrank.</p>`}
+  ${newb.length?`<h4>Biggest newcomers</h4><div class="chips">${newb.map(i=>`<span class="chip"><span class="dot" style="background:${divOf(i).color}"></span>${esc(AL[i].name)} · ${fmtN(R[i].flights)} a week</span>`).join("")}</div>`:""}
+  <h4>By division</h4><div class="scroll"><table class="tbl"><thead><tr><th>Division</th><th class="r">Flights a week</th><th class="r">Routes added</th><th class="r">Routes dropped</th></tr></thead><tbody>${[...dv].sort((p,q)=>q[1].net-p[1].net).map(([d,v])=>`<tr><td>${esc(d)}</td><td class="r ${v.net>0?"ok":v.net<0?"bad":""}">${sg(v.net)}</td><td class="r">${fmtN(v.ra)}</td><td class="r">${fmtN(v.rr)}</td></tr>`).join("")}</tbody></table></div>
+  <p class="note">Only airlines whose timetable was captured both times are compared, so airlines that just joined count as newcomers rather than growers.</p>`;}
+
+/* ---------- plane finder ---------- */
+let REGIDX=null;const regIdx=()=>{if(REGIDX)return REGIDX;REGIDX=new Map();ACL.forEach((a,i)=>{if(!a||!a[1])return;const k=String(a[1]).toUpperCase();if(!REGIDX.has(k))REGIDX.set(k,[]);REGIDX.get(k).push(i);});return REGIDX;};
+function viewPlane(){const q=Q();$("main").innerHTML=head("Plane","finder","Type a registration to see that plane's whole week: every flight, where it spends each night and how many hours it flies.")+
+  `<form class="f" id="f"><label>Registration<input id="rg" autocomplete="off" spellcheck="false" value="${esc(q.get("reg")||"")}" placeholder="N123SR"></label><button class="btn prim">Find</button></form><div class="out" id="out"></div>`;
+  $("f").onsubmit=e=>{e.preventDefault();runPlane();};if(q.get("reg"))runPlane(q.get("ac")!=null?+q.get("ac"):undefined);}
+function runPlane(pickAc){const out=$("out"),v=$("rg").value.trim().toUpperCase().replace(/\s+/g,"");if(!v){out.innerHTML=`<p class="err">Type a registration.</p>`;return;}
+  const I=regIdx();let acs=I.get(v)||I.get(v.replace(/^([A-Z0-9]{1,2})([A-Z0-9]{3,})$/,"$1-$2"))||[];
+  if(pickAc!=null&&ACL[pickAc])acs=[pickAc];
+  if(!acs.length){const near=[...I.keys()].filter(k=>k.replace(/-/g,"").startsWith(v.replace(/-/g,""))).slice(0,24);
+    out.innerHTML=near.length?`<p class="note">No plane is registered exactly ${esc(v)}. Did you mean:</p><div class="chips">${near.map(k=>`<a class="chip" style="text-decoration:none;color:inherit" href="#/plane?reg=${encodeURIComponent(k)}">${esc(k)}</a>`).join("")}</div>`:`<p class="err">No Echo plane has a registration like ${esc(v)}.</p>`;return;}
+  const rows=ROT.filter(r=>acs.includes(r.ac)),owners=[...new Set(rows.map(r=>r.ai))];
+  if(acs.length>1&&owners.length>1&&pickAc==null){out.innerHTML=`<p class="note">${owners.length} airlines have a plane registered ${esc(v)}. Which one?</p><div class="chips">${acs.map(ac=>{const r=ROT.find(x=>x.ac===ac);return r?`<a class="chip" style="text-decoration:none;color:inherit" href="#/plane?reg=${encodeURIComponent(v)}&ac=${ac}">${esc(AL[r.ai].name)} · ${esc(acModel(ac))}</a>`:"";}).join("")}</div>`;return;}
+  const ac=acs[0],me=rows.length?rows[0].ai:null;$("rg").value=ACL[ac][1];setQ("plane",{reg:ACL[ac][1],ac:acs.length>1?ac:""});
+  if(!rows.length){out.innerHTML=`<p class="note">${esc(ACL[ac][1])} (${esc(acModel(ac))}) isn't flying any routes in the timetable: parked, or new since the capture.</p>`;return;}
+  const d0=Math.floor(nowMin()/1440),L=[];for(const r of rows)for(let d=d0-1;d<d0+8;d++){if(!runsOn(r,d))continue;for(const l of legsOf(r,d))L.push(l);}
+  const wk=L.filter(l=>l.t>=d0*1440&&l.t<(d0+7)*1440).sort((p,q)=>p.t-q.t),seen=new Set(),W=wk.filter(l=>{const k=l.fn+"@"+l.t;if(seen.has(k))return false;seen.add(k);return true;});
+  const days=new Map();W.forEach(l=>{const k=localDay(l.from,l.t);if(!days.has(k))days.set(k,[]);days.get(k).push(l);});
+  const blk=W.reduce((s,l)=>s+l.dur,0),aps=new Set(W.flatMap(l=>[l.from,l.to])),kmw=W.reduce((s,l)=>s+km(l.from,l.to),0);
+  out.innerHTML=`<div class="stats">${stat("Plane",esc(ACL[ac][1]),`${esc(acModel(ac))} · ${esc(AL[me].name)}`,true)}${stat("Flying",dur(blk),"in the next 7 days")}${stat("Flights",fmtN(W.length),`${fmtN(aps.size)} airports`)}${stat("Distance",dist(kmw),"this week")}</div>
+  <div class="scroll"><table class="tbl"><thead><tr><th>Day</th><th>Flights (local times)</th><th>Night at</th></tr></thead><tbody>
+  ${[...days].sort((p,q)=>p[0]-q[0]).map(([d,F])=>{const last=F[F.length-1];return `<tr><td><b>${DAYN[mod(d+3,7)]}</b></td><td>${F.map(l=>`<span class="leg"><b>${esc(fnOf(me,l.fn))}</b> ${l.from} ${localTime(l.from,l.t)} → ${l.to} ${localTime(l.to,l.t+l.dur)}</span>`).join("")}</td><td>${esc(apName(last.to))}</td></tr>`;}).join("")}</tbody></table></div>
+  <p class="note">The next seven days from today, from the timetable. "Night at" is where the plane's last flight of the day lands.</p>`;}
+
+/* ---------- route builder ---------- */
+function viewRouteBuild(){const q=Q();$("main").innerHTML=head("Route","builder","Get from one airport to another on Echo flights in as few hops as possible, with who flies each leg. Keep it inside one division if you like.")+
+  `<form class="f" id="f">${apIn("a","From",q.get("from"))}${apIn("b","To",q.get("to"))}<label>Airlines<select id="sc"><option value="">All of Echo</option>${DIVS.map(d=>`<option value="${d.code}"${q.get("dv")===d.code?" selected":""}>${esc(d.name)}</option>`).join("")}</select></label><button class="btn prim">Build</button></form><div class="out" id="out"></div>`;
+  apList();$("f").onsubmit=e=>{e.preventDefault();runRouteBuild();};if(q.get("from")&&q.get("to"))runRouteBuild();}
+function adjacency(dvc){const A=new Map(),P=pairIndex();for(const [k,m] of P){const ok=[...m].filter(([i])=>!dvc||divOf(i).code===dvc);if(!ok.length)continue;const [x,y]=k.split("|");
+  for(const [p,q] of [[x,y],[y,x]]){if(!A.has(p))A.set(p,new Map());A.get(p).set(q,ok);}}return A;}
+function runRouteBuild(){const a=apPick($("a").value),b=apPick($("b").value),out=$("out"),dvc=$("sc").value;
+  if(!a||!b){out.innerHTML=`<p class="err">Both need to be airports Echo flies to.</p>`;return;}if(a===b){out.innerHTML=`<p class="err">Pick two different airports.</p>`;return;}
+  $("a").value=a;$("b").value=b;setQ("routebuild",{from:a,to:b,dv:dvc});
+  const A=adjacency(dvc);if(!A.has(a)||!A.has(b)){out.innerHTML=`<p class="err">${!A.has(a)?a:b} has no ${dvc?esc(DIVS.find(d=>d.code===dvc).name)+" ":""}flights.</p>`;return;}
+  /* breadth first: how many hops to everywhere, then every shortest path back from B */
+  const dist0=new Map([[a,0]]),qq=[a];while(qq.length){const x=qq.shift();if(x===b)break;const d=dist0.get(x);if(d>=5)continue;for(const y of A.get(x).keys())if(!dist0.has(y)){dist0.set(y,d+1);qq.push(y);}}
+  if(!dist0.has(b)){out.innerHTML=`<p class="err">There's no way from ${a} to ${b} on ${dvc?"that division's":"Echo"} flights within five hops.</p>`;return;}
+  const H=dist0.get(b),paths=[];const walk=(x,path)=>{if(paths.length>=400)return;if(x===a){paths.push([a,...path].reverse().reverse());return;}
+    for(const [y] of A.get(x)){if(dist0.get(y)===dist0.get(x)-1)walk(y,[x,...path]);}};
+  walk(b,[]);const P=paths.map(p=>p[0]===a?p:[a,...p]).map(p=>{const legs=[];for(let i=0;i<p.length-1;i++)legs.push({x:p[i],y:p[i+1],who:A.get(p[i]).get(p[i+1])});
+    return {p,legs,km:legs.reduce((s,l)=>s+km(l.x,l.y),0),min:Math.min(...legs.map(l=>l.who.reduce((s,w)=>s+w[1],0)))};}).sort((p,q)=>p.km-q.km).slice(0,6);
+  out.innerHTML=`<div class="stats">${stat("Fewest hops",fmtN(H),H===1?"nonstop":`${H-1} stop${H>2?"s":""}`,true)}${stat("Shortest way",dist(P[0].km),`straight line ${dist(km(a,b))}`)}${stat("Ways with "+H+" hop"+(H>1?"s":""),fmtN(paths.length>=400?400:paths.length)+(paths.length>=400?"+":""),"")}</div>
+  ${P.map((x,n)=>`<div class="rb"><p class="rbh"><b>${x.p.join(" → ")}</b> <span>${dist(x.km)}</span></p>${x.legs.map(l=>`<p class="rbl">${l.x}–${l.y} <span class="sub" style="display:inline">${dist(km(l.x,l.y))}</span> · ${l.who.sort((p,q)=>q[1]-p[1]).slice(0,3).map(([i,f])=>`${esc(AL[i].name)} (${fmtN(f)} a week)`).join(", ")}${l.who.length>3?` and ${l.who.length-3} more`:""}</p>`).join("")}</div>`).join("")}
+  <p class="note">Hops only, not timed connections: check the times with Connections. The shortest ways by distance are shown first.</p>`;}
+
+/* ---------- Elysium: frequency spread ---------- */
+const SPREAD={2:[0,3],3:[0,2,4],4:[0,1,3,5],5:[0,1,2,4,5]};
+function viewSpread(){const q=Q();$("main").innerHTML=head("Frequency","spread","Routes flown two to five times a week on bunched-up days. Real airlines spread them out: Monday, Wednesday, Friday rather than Monday, Tuesday, Wednesday.")+
+  `<form class="f" id="f">${elyAl(q)}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;alList();$("f").onsubmit=e=>{e.preventDefault();runSpread();};runSpread(q.get("al")!=null?+q.get("al"):undefined);}
+function runSpread(pick){const out=$("out"),P=elyPick(out,pick,i=>runSpread(i));if(!P)return;setQ("spread",P.all?{}:{al:P.me});
+  const S=new Set(P.list),bad=[];let n=0;
+  for(const r of ROT){if(!S.has(r.ai))continue;const c=pc(r.dm);if(c<2||c>5)continue;n++;const D=[0,1,2,3,4,5,6].filter(i=>(r.dm>>i)&1);
+    const gaps=D.map((d,i)=>mod(D[(i+1)%D.length]-d,7)||7),mx=Math.max(...gaps),ideal=Math.ceil(7/c);if(mx-ideal<2)continue;
+    const T=SPREAD[c],sug=T.map(x=>(x+D[0])%7).sort((p,q)=>p-q);bad.push({r,D,sug,mx});}
+  bad.sort((p,q)=>q.mx-p.mx);const days=a=>a.map(i=>DAYN[i]).join(" ");
+  out.innerHTML=`<div class="stats">${stat("Spread well",n?Math.round((n-bad.length)/n*100)+"%":"—",`of ${fmtN(n)} routes flown 2 to 5 times a week`,true)}${stat("Bunched up",fmtN(bad.length),"routes")}${stat("Checked",P.all?"Elysium":esc(AL[P.me].name),"")}</div>
+  ${bad.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Flight</th>${P.all?"<th>Airline</th>":""}<th>Flies</th><th>Longest gap</th><th>Spread out</th></tr></thead><tbody>${bad.slice(0,80).map(x=>`<tr><td><b>${esc(fnOf(x.r.ai,x.r.fn))}</b> ${x.r.A}–${x.r.B}</td>${P.all?`<td>${esc(AL[x.r.ai].name)}</td>`:""}<td>${days(x.D)}</td><td class="bad">${x.mx} days</td><td>${days(x.sug)}</td></tr>`).join("")}</tbody></table></div>${bad.length>80?`<p class="note">The 80 most bunched of ${fmtN(bad.length)}.</p>`:""}`:`<p class="note">Every route flown a few times a week is nicely spread.</p>`}
+  <p class="note">Days are local at the departure airport. "Spread out" keeps your first day and spaces the rest evenly; moving days changes that plane's week, so check it with the Turnaround check.</p>`;}
+
+/* ---------- Elysium: same flight, same plane ---------- */
+function viewEquip(){const q=Q();$("main").innerHTML=head("Same flight,","same plane","Flight numbers flown by different aircraft types on different days. Real airlines keep a flight on one type so the seats people book stay the same.")+
+  `<form class="f" id="f">${elyAl(q)}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;alList();$("f").onsubmit=e=>{e.preventDefault();runEquip();};runEquip(q.get("al")!=null?+q.get("al"):undefined);}
+function runEquip(pick){const out=$("out"),P=elyPick(out,pick,i=>runEquip(i));if(!P)return;setQ("equip",P.all?{}:{al:P.me});
+  const S=new Set(P.list),M=new Map(),add=(ai,fn,leg,ac,dm)=>{if(fn==null||ac<0||!ACL[ac])return;const k=ai+"|"+fn;let x=M.get(k);if(!x){x={ai,fn,legs:new Set(),t:new Map()};M.set(k,x);}x.legs.add(leg);const t=ACL[ac][0];x.t.set(t,(x.t.get(t)||0)|dm);};
+  for(const r of ROT){if(!S.has(r.ai))continue;add(r.ai,r.fn,r.A+"–"+r.B,r.ac,r.dm);add(r.ai,r.ifn!=null?r.ifn:r.fn+1,r.B+"–"+r.A,r.ac,r.dm);if(r.C){add(r.ai,r.cfn,r.B+"–"+r.C,r.ac,r.dm);add(r.ai,r.cifn!=null?r.cifn:r.cfn+1,r.C+"–"+r.B,r.ac,r.dm);}}
+  const all=[...M.values()],bad=all.filter(x=>x.t.size>1).sort((p,q)=>q.t.size-p.t.size);
+  const dd=m=>[0,1,2,3,4,5,6].filter(i=>(m>>i)&1).map(i=>DAYN[i]).join(" ");
+  out.innerHTML=`<div class="stats">${stat("One type",all.length?Math.round((all.length-bad.length)/all.length*100)+"%":"—",`of ${fmtN(all.length)} flight numbers`,true)}${stat("Mixed",fmtN(bad.length),"flight numbers on more than one type")}${stat("Checked",P.all?"Elysium":esc(AL[P.me].name),"")}</div>
+  ${bad.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Flight</th>${P.all?"<th>Airline</th>":""}<th>Route</th><th>Types, by day</th></tr></thead><tbody>${bad.slice(0,80).map(x=>`<tr><td><b>${esc(fnOf(x.ai,x.fn))}</b></td>${P.all?`<td>${esc(AL[x.ai].name)}</td>`:""}<td>${[...x.legs].join(", ")}</td><td>${[...x.t].map(([t,m])=>`${esc(MODELS[t])} <span class="sub" style="display:inline">${dd(m)}</span>`).join("<br>")}</td></tr>`).join("")}</tbody></table></div>${bad.length>80?`<p class="note">The first 80 of ${fmtN(bad.length)}.</p>`:""}`:`<p class="note">Every flight number stays on one aircraft type.</p>`}
+  <p class="note">A short-notice swap is normal in real life; a flight number that's planned on different types every week isn't.</p>`;}
+
+/* ---------- Elysium: network shape ---------- */
+function shapeOf(ai){const dep=new Map();let tot=0;const legs=[];for(const r of ROT){if(r.ai!==ai)continue;for(const [f,t,n] of rowLegs(r)){dep.set(f,(dep.get(f)||0)+n);tot+=n;legs.push([f,t,n]);}}
+  if(!tot)return null;const hubs=new Set((AL[ai].hubs||[]).filter(c=>dep.has(c)));if(!hubs.size)hubs.add([...dep].sort((p,q)=>q[1]-p[1])[0][0]);
+  const viaHub=legs.reduce((s,[f,t,n])=>s+(hubs.has(f)||hubs.has(t)?n:0),0),p2p=new Map();legs.forEach(([f,t,n])=>{if(!hubs.has(f)&&!hubs.has(t)){const k=pairKey(f,t);p2p.set(k,(p2p.get(k)||0)+n);}});
+  return {share:viaHub/tot,hubs:[...hubs],p2p,tot};}
+const shapeName=s=>s>=0.85?"Hub and spoke":s>=0.6?"Hubs with some point-to-point":"Mostly point-to-point";
+function viewShape(){const q=Q();$("main").innerHTML=head("Network","shape","How hub-and-spoke your airline is: the share of flights that touch one of your hubs, the routes that don't, and how that compares with the rest of Elysium.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<button class="btn prim">Check</button></form><div class="out" id="out"></div>`;alList();$("f").onsubmit=e=>{e.preventDefault();runShape();};if(q.get("al")!=null||q.get("q"))runShape(q.get("al")!=null?+q.get("al"):undefined);}
+function runShape(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runShape(i));if(me==null)return;$("al").value=AL[me].name;setQ("shape",{al:me});
+  const S=shapeOf(me);if(!S)return noRoutes(out,me);
+  const E=AL.map((a,i)=>i).filter(isEly).map(i=>shapeOf(i)).filter(Boolean),avg=E.length?E.reduce((s,x)=>s+x.share,0)/E.length:null,P=[...S.p2p].sort((p,q)=>q[1]-p[1]);
+  out.innerHTML=`<div class="stats">${stat("Through a hub",Math.round(S.share*100)+"%","of your flights a week",true)}${stat("Shape",shapeName(S.share),"")}${stat("Hubs",esc(S.hubs.join(", ")),"from your airline's hub list")}${stat("Elysium average",avg!=null?Math.round(avg*100)+"%":"—","through a hub")}</div>
+  <div class="bar2"><i style="width:${(S.share*100).toFixed(1)}%"></i>${avg!=null?`<b style="left:${(avg*100).toFixed(1)}%" title="Elysium average"></b>`:""}</div>
+  ${P.length?`<h4>Routes that don't touch a hub</h4><div class="scroll"><table class="tbl"><thead><tr><th>Route</th><th class="r">Flights a week</th></tr></thead><tbody>${P.slice(0,40).map(([k,n])=>`<tr><td>${pairTxt(k)}</td><td class="r">${fmtN(n)}</td></tr>`).join("")}</tbody></table></div>`:`<p class="note">Every flight touches one of your hubs.</p>`}
+  <p class="note">Hubs are the ones on your airline's profile in the game (or your busiest airport if none are set). Big real-world network carriers run 85% or more through hubs; low-cost carriers are often well under 60%.</p>`;}
+
+/* ---------- game: whose network? ---------- */
+const WN={n:0,score:0};
+async function viewWhoseNet(){$("main").innerHTML=gameHead("Whose","network?","An Echo airline's routes on the map. Which airline is it?")+`<div class="out" id="out"><div class="loading"><i></i><i></i><i></i> Loading the map…</div></div>`;
+  try{await geoLibs();}catch(e){$("out").innerHTML=`<p class="err">The map couldn't load. Check your connection and try again.</p>`;return;}if(!$("out"))return;WN.n=0;WN.score=0;wnRound();}
+function wnRound(){const out=$("out");if(!out)return;if(WN.n>=6)return endScreen(out,"whosenet",WN.score,6,viewWhoseNet,["you can read a route map","good eye","maps are hard"]);
+  const R=rankData(),pool=gamePool().filter(i=>R[i].routes>=25),ans=pickR(pool),dv=divOf(ans),near=pool.filter(i=>i!==ans&&divOf(i)===dv),opts=new Set([ans]);
+  while(opts.size<4)opts.add(Math.random()<0.6&&near.length>=3?pickR(near):pickR(pool));
+  const pairs=[...alPairs(ans)],W=960,H=500,proj=d3.geoEqualEarth().fitExtent([[6,6],[W-6,H-6]],{type:"Sphere"}),path=d3.geoPath(proj),mx=Math.max(...pairs.map(x=>x[1]));WN.n++;
+  out.innerHTML=`<div class="stats">${stat("Round",`${WN.n} of 6`,"")}${stat("Score",fmtN(WN.score),"")}</div>
+  <div class="mapbox"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="A mystery airline's route map"><path class="sphere" d="${path({type:"Sphere"})}"/><path class="land" d="${path(GEO.land)}"/>
+  <g class="routes" stroke="${dv.color||"#c4a1ff"}">${pairs.map(([k,n])=>{const [a,b]=k.split("|"),d=path({type:"LineString",coordinates:[[AP[a].lo,AP[a].la],[AP[b].lo,AP[b].la]]});return d?`<path d="${d}" stroke-width="${(0.6+2.2*Math.sqrt(n/mx)).toFixed(2)}" stroke-opacity=".7"/>`:"";}).join("")}</g></svg></div><div id="qb"></div>`;
+  fourWay($("qb"),[...opts].sort(()=>Math.random()-0.5).map(i=>({html:`${esc(AL[i].name)}<span class="sub">${esc(divShort(i))}</span>`,ok:i===ans})),(ok,ex)=>{if(ok)WN.score++;$("qr").innerHTML=`<p class="qres ${ok?"ok":"bad"}">${ex}</p><button type="button" class="btn prim" id="nx">${WN.n>=6?"See score":"Next map"}</button>`;$("nx").onclick=wnRound;$("nx").focus();},
+    ok=>`${ok?"Right.":"Not quite."} It's ${esc(AL[ans].name)}: ${fmtN(pairs.length)} routes, hubs ${esc((AL[ans].hubs||[]).slice(0,4).join(", ")||"—")}.`);}
+
+/* ---------- game: connect the dots ---------- */
+const DT={A:null,B:null,at:null,hops:[],par:0,adj:null,solved:0};
+function viewDots(){$("main").innerHTML=gameHead("Connect","the dots","Get from one airport to the other on real Echo flights. Every hop must be a route an Echo airline flies. Can you match the fewest hops?")+`<div class="out" id="out"></div>`;dtNew();}
+function dtNew(){if(!DT.adj)DT.adj=adjacency("");const top=apBusy().slice(0,250).map(x=>x[0]).filter(c=>DT.adj.has(c));let t=0;
+  do{DT.A=pickR(top);DT.B=pickR(top);const d=new Map([[DT.A,0]]),q=[DT.A];while(q.length){const x=q.shift();if(x===DT.B)break;for(const y of DT.adj.get(x).keys())if(!d.has(y)){d.set(y,d.get(x)+1);q.push(y);}}DT.par=d.get(DT.B)||0;t++;}
+  while((DT.par<2||DT.par>3)&&t<60);DT.at=DT.A;DT.hops=[DT.A];dtDraw();}
+function dtDraw(msg){const out=$("out");if(!out)return;const nb=[...DT.adj.get(DT.at).keys()].filter(c=>AP[c]).sort();const done=DT.at===DT.B;
+  out.innerHTML=`<div class="stats">${stat("From",DT.A,esc(cityOf(DT.A)),true)}${stat("To",DT.B,esc(cityOf(DT.B)))}${stat("Hops",fmtN(DT.hops.length-1),`best is ${DT.par}`)}${stat("Solved in the fewest",fmtN(DT.solved),`best ${fmtN(best.get("dots"))}`)}</div>
+  <div class="codebox"><p class="trail">${DT.hops.map((c,i)=>`<b>${c}</b>`).join(" → ")}</p>
+  ${done?`<p class="qres ${DT.hops.length-1<=DT.par?"ok":"bad"}">${DT.hops.length-1<=DT.par?`Made it in ${DT.par}, the fewest possible.`:`Made it in ${DT.hops.length-1}. It can be done in ${DT.par}.`}</p><button type="button" class="btn prim" id="nx">New puzzle</button>`:
+  DT.hops.length>8?`<p class="qres bad">Out of fuel after 8 hops. It can be done in ${DT.par}.</p><button type="button" class="btn prim" id="nx">New puzzle</button>`:
+  `<p class="note">You're at <b>${DT.at}</b> ${esc(cityOf(DT.at))}, ${dist(km(DT.at,DT.B))} from ${DT.B}. Echo flies from here to ${fmtN(nb.length)} airports.</p>
+  <div class="f dotsf"><label>Fly to<input id="nx2" list="dotsnb" autocomplete="off" spellcheck="false" placeholder="three-letter code"></label><button type="button" class="btn prim" id="fly">Fly</button>${DT.hops.length>1?`<button type="button" class="btn" id="undo">Back one</button>`:""}</div>
+  <datalist id="dotsnb">${nb.map(c=>`<option value="${c}">${esc(cityOf(c))}, ${esc(country(AP[c].cc))}</option>`).join("")}</datalist>${msg?`<p class="err">${msg}</p>`:""}`}</div>`;
+  if($("nx"))$("nx").onclick=dtNew;
+  if($("fly")){const go=()=>{const c=apPick($("nx2").value)||$("nx2").value.trim().toUpperCase();if(!DT.adj.get(DT.at).has(c))return dtDraw(`No Echo airline flies ${esc(DT.at)}–${esc(c||"?")}.`);
+    DT.at=c;DT.hops.push(c);if(c===DT.B&&DT.hops.length-1<=DT.par){DT.solved++;best.set("dots",DT.solved);}dtDraw();};$("fly").onclick=go;$("nx2").onkeydown=e=>{if(e.key==="Enter")go();};$("nx2").focus();}
+  if($("undo"))$("undo").onclick=()=>{DT.hops.pop();DT.at=DT.hops[DT.hops.length-1];dtDraw();};}
+
+/* ---------- Echo Daily leaderboard ---------- */
+async function dailyBoard(res){const box=$("board");if(!box)return;const k=dailyKey(),sent=(()=>{try{return localStorage.getItem("echo_tb_daily_sent")===String(k);}catch(_){return false;}})();
+  const last=(()=>{try{return localStorage.getItem("echo_tb_name")||"";}catch(_){return "";}})();
+  let top=[];try{top=await rpc("echo_daily_top",{});}catch(_){box.innerHTML=`<p class="note">Today's board couldn't load.</p>`;return;}
+  box.innerHTML=`<h4>Today's board</h4>${sent?"":`<div class="f dotsf"><label>Your name on the board<input id="bn" maxlength="20" autocomplete="nickname" value="${esc(last)}" placeholder="Your Discord name"></label><button type="button" class="btn prim" id="bs">Add my score</button></div><p class="err" id="be" hidden></p>`}
+  ${Array.isArray(top)&&top.length?`<div class="scroll"><table class="tbl"><thead><tr><th class="r">#</th><th>Name</th><th>Score</th></tr></thead><tbody>${top.map((x,i)=>`<tr><td class="r">${i+1}</td><td>${esc(x.name)}</td><td>${String(x.res).split("").map(c=>c==="1"?"🟩":"🟥").join("")} <b>${x.score}</b></td></tr>`).join("")}</tbody></table></div>`:`<p class="note">Nobody's on today's board yet.</p>`}`;
+  if($("bs"))$("bs").onclick=async()=>{const n=$("bn").value.trim();if(n.length<2){$("be").hidden=false;$("be").textContent="Type a name of at least 2 letters.";return;}
+    $("bs").disabled=true;let r;try{r=await rpc("echo_daily_submit",{p_name:n,p_res:res.map(x=>x?"1":"0").join("")});}catch(_){r={ok:false,why:"error"};}
+    if(r&&r.ok){try{localStorage.setItem("echo_tb_daily_sent",String(k));localStorage.setItem("echo_tb_name",n);}catch(_){}dailyBoard(res);}
+    else{$("bs").disabled=false;$("be").hidden=false;$("be").textContent=r&&r.why==="taken"?"Someone already used that name today. Try another.":r&&r.why==="name"?"Use letters, numbers, spaces, dots, dashes or underscores.":"Your score couldn't be added. Try again in a minute.";}};}
+
+ELY.push(["banks","Hub bank builder","The departure time for each route that catches the most of your arriving flights."],
+  ["report","Schedule report card","Every Elysium check on one airline, graded, worst problems first."]);
+GAMES.push(["aphigher","Airport higher or lower","Which airport has more Echo departures? Keep the streak going."],
+  ["fillday","Fill the day","Pick round trips to fill one plane's 20-hour day as full as it'll go."],
+  ["weekly","Echo Weekly","Ten harder questions, the same for everyone this week, with its own board."]);
+/* ---------- my plans ---------- */
+const PLK="echo_tb_plans";
+const plans={get:()=>{try{return JSON.parse(localStorage.getItem(PLK)||"[]");}catch(_){return [];}},set:L=>{try{localStorage.setItem(PLK,JSON.stringify(L));}catch(_){}}};
+function addPlan(a,b,note){const L=plans.get();if(L.some(p=>p.a===a&&p.b===b))return false;L.push({a,b,note:note||"",t:Date.now()});plans.set(L);return true;}
+/* every "Check" button on a route gets a "+ Plan" beside it */
+new MutationObserver(()=>{document.querySelectorAll('#main a.btn.sm[href^="#/route?from="]').forEach(a=>{if(a.dataset.pl)return;a.dataset.pl="1";
+  const u=new URLSearchParams(a.getAttribute("href").split("?")[1]),x=u.get("from"),y=u.get("to");if(!x||!y)return;
+  const b=document.createElement("button");b.type="button";b.className="btn sm planbtn";const has=()=>plans.get().some(p=>p.a===x&&p.b===y);b.textContent=has()?"Planned":"+ Plan";
+  b.onclick=()=>{if(has()){location.hash="#/plans";return;}addPlan(x,y,document.title.split(" · ")[0]);b.textContent="Planned";};a.after(b);});}).observe(document.getElementById("main"),{childList:true,subtree:true});
+function viewPlans(){const q=Q(),add=(q.get("add")||"").split(",").map(s=>s.split("-")).filter(p=>p.length===2&&AP[p[0]]&&AP[p[1]]);
+  const L=plans.get();
+  $("main").innerHTML=head("My","plans","Routes you're thinking about, saved from any tool with the + Plan button. They stay on this device; share them with a link.")+
+  (add.length?`<div class="mybar"><span>A shared list of <b>${add.length}</b> route${add.length>1?"s":""}: ${add.slice(0,6).map(p=>p.join("–")).join(", ")}${add.length>6?"…":""}</span><button type="button" class="btn sm prim" id="addall">Add to my plans</button></div>`:"")+
+  (L.length?`<div class="stats">${stat("Planned",fmtN(L.length),"routes",true)}${stat("Distance",dist(L.reduce((s,p)=>s+km(p.a,p.b),0)),"one way, all of them")}${stat("Already flown",fmtN(L.filter(p=>pairIndex().has(pairKey(p.a,p.b))).length),"by some Echo airline")}</div>
+  <div class="row-btns"><button type="button" class="btn" id="shp">Copy share link</button><a class="btn" id="csv" download="my-echo-plans.csv">Download (.csv)</a><button type="button" class="btn" id="clr">Clear all</button><span class="note" id="pm" style="margin:0"></span></div>
+  <div class="scroll"><table class="tbl"><thead><tr><th>Route</th><th class="r">Distance</th><th>Echo now</th><th>Note</th><th></th></tr></thead><tbody>${L.map((p,i)=>{const m=pairIndex().get(pairKey(p.a,p.b));return `<tr><td><b>${p.a}–${p.b}</b><span class="sub">${esc(cityOf(p.a))} to ${esc(cityOf(p.b))}</span></td><td class="r">${dist(km(p.a,p.b))}</td><td>${m?`${m.size} airline${m.size>1?"s":""}, ${fmtN([...m.values()].reduce((s,x)=>s+x,0))} a week`:"nobody yet"}</td><td><input class="pnote" data-i="${i}" value="${esc(p.note)}" maxlength="80" placeholder="note"></td><td class="nowrap"><a class="btn sm" href="#/route?from=${p.a}&to=${p.b}" data-pl="1">Check</a> <a class="btn sm" href="${LIVE}#/between/${p.a}/${p.b}" target="_blank" rel="noopener">Echo Live</a> <button type="button" class="btn sm" data-del="${i}">Remove</button></td></tr>`;}).join("")}</tbody></table></div>`:
+  `<p class="note">Nothing planned yet. Press <b>+ Plan</b> next to any route in Route gaps, Stopovers, the Plane day builder or Route builder.</p>`);
+  if($("addall"))$("addall").onclick=()=>{add.forEach(p=>addPlan(p[0],p[1],"shared"));location.hash="#/plans";};
+  if(!L.length)return;
+  const csvq=v=>{v=String(v==null?"":v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+  $("csv").href=URL.createObjectURL(new Blob(["﻿From,To,Distance km,Echo airlines on it,Note\r\n"+L.map(p=>{const m=pairIndex().get(pairKey(p.a,p.b));return [p.a,p.b,Math.round(km(p.a,p.b)),m?m.size:0,p.note].map(csvq).join(",");}).join("\r\n")],{type:"text/csv"}));
+  $("shp").onclick=async()=>{const u=location.href.split("#")[0]+"#/plans?add="+L.map(p=>p.a+"-"+p.b).join(",");try{await navigator.clipboard.writeText(u);$("pm").textContent="Link copied.";}catch(_){$("pm").textContent=u;}};
+  $("clr").onclick=()=>{if($("clr").dataset.sure){plans.set([]);viewPlans();}else{$("clr").dataset.sure="1";$("clr").textContent="Sure? Click again";}};
+  document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{const L2=plans.get();L2.splice(+b.dataset.del,1);plans.set(L2);viewPlans();});
+  document.querySelectorAll(".pnote").forEach(x=>x.onchange=()=>{const L2=plans.get();if(L2[+x.dataset.i]){L2[+x.dataset.i].note=x.value.slice(0,80);plans.set(L2);}});}
+
+/* ---------- open what you're looking at in Echo Live ---------- */
+function liveUrl(){const t=(location.hash.slice(2).split("?")[0])||"",q=Q(),ap=q.get("ap")||q.get("hub"),from=q.get("from"),to=q.get("to"),reg=q.get("reg"),al=q.get("al");
+  if(reg)return LIVE+"#/reg/"+encodeURIComponent(reg);if(from&&to)return LIVE+"#/between/"+from+"/"+to;if(ap&&AP[ap])return LIVE+"#/airport/"+ap;if(al!=null&&AL[+al])return LIVE+"#/airline/"+(+al);return LIVE;}
+function liveBtn(){return `<a class="linkbtn share" href="${LIVE}" target="_blank" rel="noopener" onclick="this.href=liveUrl()">Open in Echo Live</a>`;}
+
+/* ---------- plane day builder: the most valuable routes your airline doesn't fly yet ---------- */
+function viewDayBuild(){
+  const q=Q();$("main").innerHTML=head("Plane day","builder","Pick a hub and a plane: this fills its day, back to back, with the most valuable routes your airline doesn't fly yet. Value comes from how many Echo flights already prove the demand and how far the route goes, per hour of the plane's time.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}${apIn("a","Hub <small>optional</small>",q.get("ap"))}<label>Aircraft<select id="ty"><option value="">Pick your airline first</option></select></label>
+  <label>First departure<input id="st" type="time" value="${esc(q.get("st")||"06:00")}" step="300"></label>
+  <label>Day length<select id="dl">${[["1080","18 hours"],["1200","20 hours"],["1320","22 hours"],["1440","24 hours"]].map(([v,t])=>`<option value="${v}"${v===(q.get("dl")||"1200")?" selected":""}>${t}</option>`).join("")}</select></label>
+  <div class="checks"><label class="ck"><input type="checkbox" id="sd"${q.get("sd")==="1"?" checked":""}> Skip routes my division already flies</label></div>
+  <button class="btn prim">Build the day</button></form><div class="out" id="out"></div>`;
+  alList();apList();const fillTypes=()=>{const m=alFind($("al").value);const me=m.length===1?m[0]:null,F=typeFar(),mine=new Map();
+    if(me!=null)for(const r of ROT)if(r.ai===me&&r.ac>=0&&ACL[r.ac])mine.set(ACL[r.ac][0],(mine.get(ACL[r.ac][0])||0)+1);
+    const own=[...mine].sort((p,q)=>q[1]-p[1]).map(x=>x[0]).filter(t=>F.has(t)),rest=[...F.keys()].filter(t=>!mine.has(t)).sort((a,b)=>MODELS[a].localeCompare(MODELS[b]));const want=q.get("ty");
+    $("ty").innerHTML=(own.length?`<optgroup label="Your fleet">${own.map(t=>`<option value="${t}">${esc(MODELS[t])}</option>`).join("")}</optgroup>`:"")+`<optgroup label="${own.length?"Other types":"Aircraft"}">${rest.map(t=>`<option value="${t}">${esc(MODELS[t])}</option>`).join("")}</optgroup>`;
+    if(want!=null&&F.has(+want))$("ty").value=want;};
+  fillTypes();$("al").addEventListener("change",fillTypes);$("al").addEventListener("blur",fillTypes);
+  $("f").onsubmit=e=>{e.preventDefault();runDayBuild();};if(q.get("al")!=null||q.get("q"))runDayBuild(q.get("al")!=null?+q.get("al"):undefined);}
+function runDayBuild(pick){
+  const out=$("out"),me=alResolve(out,$("al"),pick,i=>runDayBuild(i));if(me==null)return;$("al").value=AL[me].name;
+  const dep=new Map();for(const r of ROT)if(r.ai===me)for(const [f,,n] of rowLegs(r))dep.set(f,(dep.get(f)||0)+n);
+  if(!dep.size)return noRoutes(out,me);
+  const h=$("a").value.trim()?apPick($("a").value):[...dep].sort((p,q)=>q[1]-p[1])[0][0];if(!h){out.innerHTML=`<p class="err">That isn't an airport Echo flies to.</p>`;return;}$("a").value=h;
+  if(!$("ty").value){const ev=new Event("change");$("al").dispatchEvent(ev);}
+  const t=+$("ty").value,F=typeFar().get(t);if(!F){out.innerHTML=`<p class="err">Pick an aircraft.</p>`;return;}
+  const [sh,sm]=$("st").value.split(":").map(Number),st=(sh||0)*60+(sm||0),DL=+$("dl").value,sd=$("sd").checked;
+  setQ("daybuild",{al:me,ap:h,ty:t,st:$("st").value,dl:DL,sd:sd?1:0});
+  const R=F.p95,mine=alPairs(me),P=pairIndex(),W=apWeek(),dv=divOf(me),turn=minTurn(MODELS[t]);
+  const blk=(x,y)=>Math.round(pairDur(x,y)||estBlock(x,y));
+  /* every possible out-and-back from the hub, with its value per hour of the plane's time */
+  const C=[];for(const [c,w] of W){if(c===h||!AP[c]||w<30)continue;const k=km(h,c);if(k>R||k<150||!legalPair(h,c))continue;
+    /* a long-range plane goes on long routes: nothing under a quarter of its range (same rule as Right-size) */
+    if(R>=7000&&k<R*0.25)continue;const key=pairKey(h,c);if(mine.has(key))continue;
+    const m=P.get(key),tot=m?[...m.values()].reduce((s,x)=>s+x,0):0;if(sd&&m&&[...m.keys()].some(i=>i>=dv.first&&i<dv.first+dv.count))continue;
+    const out1=blk(h,c),back=blk(c,h),trip=out1+groundMin(h,c)+back+turn,demand=Math.log1p(tot*3+Math.sqrt(w)),value=demand*Math.pow(k,0.8);
+    C.push({c,k,tot,airlines:m?m.size:0,out1,back,trip,value,vph:value/(trip/60)});}
+  if(!C.length){out.innerHTML=`<p class="note">No route from ${h} fits a ${esc(MODELS[t])} that ${esc(AL[me].name)} doesn't already fly.</p>`;return;}
+  C.sort((p,q)=>q.vph-p.vph);
+  /* fill the day: best value per hour that still fits, then keep going with what's left */
+  const day=[];let left=DL,used=new Set();
+  while(day.length<10){const x=C.find(z=>!used.has(z.c)&&z.trip<=left);if(!x)break;day.push(x);used.add(x.c);left-=x.trip;}
+  if(!day.length){out.innerHTML=`<p class="note">No unflown route from ${h} fits in ${dur(DL)} with a ${esc(MODELS[t])}.</p>`;return;}
+  let clock=st;const rows=day.map(x=>{const d1=clock,a1=d1+x.out1,d2=a1+groundMin(h,x.c),a2=d2+x.back;clock=a2+turn;return {x,d1,a1,d2,a2};});
+  const blockH=day.reduce((s,x)=>s+x.out1+x.back,0),hm2=m=>hhmm(mod(m,1440))+(m>=1440?`<sup>+1</sup>`:"");
+  const alt=C.filter(z=>!used.has(z.c)).slice(0,12);
+  out.innerHTML=`<div class="stats">${stat("Rotations",fmtN(day.length),`from ${esc(apName(h))}`,true)}${stat("Flying",dur(blockH),`of a ${dur(DL)} day`)}${stat("Day used",Math.round((DL-left)/DL*100)+"%","including ground time")}${stat("Plane",esc(MODELS[t]),`good for ${dist(R)}`)}</div>
+  <div class="scroll"><table class="tbl"><thead><tr><th>Route</th><th class="r">Leaves ${h}</th><th class="r">Lands</th><th class="r">Leaves back</th><th class="r">Home</th><th>Why it's worth it</th><th></th></tr></thead><tbody>
+  ${rows.map(({x,d1,a1,d2,a2})=>`<tr><td><b>${h}–${x.c}</b><span class="sub">${esc(cityOf(x.c))}, ${esc(country(AP[x.c].cc))} · ${dist(x.k)}</span></td><td class="r">${hm2(d1)}</td><td class="r">${hm2(a1)}</td><td class="r">${hm2(d2)}</td><td class="r">${hm2(a2)}</td><td>${x.tot?`${fmtN(x.airlines)} Echo airline${x.airlines>1?"s":""}, ${fmtN(x.tot)} flights a week prove the demand`:`nobody flies it yet; ${cityOf(x.c)} has ${fmtN(W.get(x.c))} Echo departures a week`}</td><td><a class="btn sm" href="#/route?from=${h}&to=${x.c}">Check</a></td></tr>`).join("")}</tbody></table></div>
+  ${alt.length?`<h4>Next best, if one of those doesn't suit</h4><div class="chips">${alt.map(z=>`<a class="chip" style="text-decoration:none;color:inherit" href="#/route?from=${h}&to=${z.c}">${h}–${z.c} · ${dist(z.k)} · ${z.tot?fmtN(z.tot)+" a week on Echo":"new"}</a>`).join("")}</div>`:""}
+  <p class="note">Times are on the hub's clock (the hub is ${h}, so landing times abroad are hub time too: check local times in Rotation planner). Block times are what Echo airlines actually fly where they exist, otherwise estimated; ground time abroad follows the game's distance rule and ${dur(turn)} is allowed at ${h} between rotations. "Value" leans on routes other Echo airlines already prove busy, and on longer routes, measured per hour of the plane's day. Long-range planes only get routes of at least a quarter of their range.</p>`;}
+
+/* ---------- division dashboard ---------- */
+function viewDivision(){const q=Q(),me=myAl(),def=q.get("dv")||(me!=null?divOf(me).code:DIVS[0].code);
+  $("main").innerHTML=head("Division","dashboard","One division at a glance: its size and growth, top airlines, busiest airports, and where it overlaps with the others.")+
+  `<form class="f" id="f"><label>Division<select id="dv">${DIVS.map(d=>`<option value="${d.code}"${d.code===def?" selected":""}>${esc(d.name)}</option>`).join("")}</select></label><button class="btn prim">Show</button></form><div class="out" id="out"></div>`;
+  $("f").onsubmit=e=>{e.preventDefault();runDivision();};$("dv").onchange=runDivision;runDivision();}
+async function runDivision(){const out=$("out"),code=$("dv").value,d=DIVS.find(x=>x.code===code);setQ("division",{dv:code});
+  const inD=i=>i>=d.first&&i<d.first+d.count,R=rankData(),ids=[];for(let i=d.first;i<d.first+d.count;i++)if(AL[i])ids.push(i);
+  const fl=ids.reduce((s,i)=>s+(R[i]?R[i].flights:0),0),fleet=ids.reduce((s,i)=>s+(AL[i].aircraft||0),0),dep=new Map(),pairs=new Map();
+  for(const r of ROT){if(!inD(r.ai))continue;for(const [f,t,n] of rowLegs(r)){dep.set(f,(dep.get(f)||0)+n);const k=pairKey(f,t);pairs.set(k,1);}}
+  const P=pairIndex(),ov=new Map();for(const k of pairs.keys()){const m=P.get(k);if(!m)continue;const seen=new Set();for(const i of m.keys()){const o=divOf(i);if(o.code!==code&&!seen.has(o.code)){seen.add(o.code);ov.set(o.name,(ov.get(o.name)||0)+1);}}}
+  const top=ids.filter(i=>R[i]&&R[i].flights).sort((p,q)=>R[q].flights-R[p].flights).slice(0,10),lead=ids.find(i=>AL[i].lead),hubs=[...dep].sort((p,q)=>q[1]-p[1]).slice(0,10);
+  out.innerHTML=`<div class="divhead" style="--dc:${d.color}"><b>${esc(d.name)}</b><span>${lead!=null?`Led by ${esc(AL[lead].name)}`:""}</span></div>
+  <div class="stats">${stat("Airlines",fmtN(ids.length),"",true)}${stat("Aircraft",fmtN(fleet),"")}${stat("Flights a week",fmtN(fl),"")}${stat("Routes",fmtN(pairs.size),`${fmtN(dep.size)} airports`)}</div><div id="grow"></div>
+  <h4>Top airlines</h4><div class="scroll"><table class="tbl"><thead><tr><th class="r">#</th><th>Airline</th><th class="r">Aircraft</th><th class="r">Flights a week</th><th class="r">Routes</th></tr></thead><tbody>${top.map((i,k)=>`<tr><td class="r">${k+1}</td><td>${esc(AL[i].name)} <span class="sub" style="display:inline">${esc(AL[i].code)}</span></td><td class="r">${fmtN(AL[i].aircraft||0)}</td><td class="r">${fmtN(R[i].flights)}</td><td class="r">${fmtN(R[i].routes)}</td></tr>`).join("")}</tbody></table></div>
+  <h4>Busiest airports</h4><div class="chips">${hubs.map(([c,n])=>`<a class="chip" style="text-decoration:none;color:inherit" href="#/airport?ap=${c}">${c} ${esc(cityOf(c))} · ${fmtN(n)} a week</a>`).join("")}</div>
+  <h4>Shares routes with</h4><div class="scroll"><table class="tbl"><thead><tr><th>Division</th><th class="r">Routes in common</th><th class="r">Share of ${esc(d.name.replace(/^Echo /,""))}'s routes</th></tr></thead><tbody>${[...ov].sort((p,q)=>q[1]-p[1]).map(([nm,n])=>`<tr><td>${esc(nm)}</td><td class="r">${fmtN(n)}</td><td class="r">${Math.round(n/pairs.size*100)}%</td></tr>`).join("")}</tbody></table></div>`;
+  try{const C=await changes();if($("dv").value!==code||!$("grow"))return;let ra=0,rr=0,fa=0,fr=0;C.add.forEach(([i,,,n])=>{if(inD(i)){ra++;fa+=n;}});C.rem.forEach(([i,,,n])=>{if(inD(i)){rr++;fr+=n;}});
+    const j=C.joined.filter(inD).length,l=C.left.filter(x=>x[2]===d.name).length,net=fa-fr;
+    $("grow").innerHTML=`<p class="status">Since ${new Date(C.from+"T12:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"long"})}: <b class="${net>=0?"okc":"badc"}">${net>=0?"+":"−"}${fmtN(Math.abs(net))}</b> flights a week, ${fmtN(ra)} routes added, ${fmtN(rr)} dropped, ${fmtN(j)} airline${j===1?"":"s"} new to Echo${l?`, ${fmtN(l)} left`:""}.</p>`;}catch(_){}}
+
+/* ---------- Elysium: hub bank builder ---------- */
+function viewBanks(){const q=Q();$("main").innerHTML=head("Hub bank","builder","For each route that starts at your hub, the departure time that would catch the most of your own arriving flights, so passengers can connect in proper waves.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}${apIn("a","Hub <small>optional</small>",q.get("ap"))}<label>Connection<select id="mc">${[[45,"45 min to 3 h"],[60,"1 h to 4 h"],[90,"1 h 30 to 5 h"]].map(([v,t])=>`<option value="${v}"${String(v)===(q.get("mc")||"60")?" selected":""}>${t}</option>`).join("")}</select></label><button class="btn prim">Build banks</button></form><div class="out" id="out"></div>`;
+  alList();apList();$("f").onsubmit=e=>{e.preventDefault();runBanks();};if(q.get("al")!=null||q.get("q"))runBanks(q.get("al")!=null?+q.get("al"):undefined);}
+function runBanks(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runBanks(i));if(me==null)return;$("al").value=AL[me].name;
+  const mine=ROT.filter(r=>r.ai===me);if(!mine.length)return noRoutes(out,me);
+  const dep=new Map();for(const r of mine)for(const [f,,n] of rowLegs(r))dep.set(f,(dep.get(f)||0)+n);
+  const h=$("a").value.trim()?apPick($("a").value):[...dep].sort((p,q)=>q[1]-p[1])[0][0];if(!h||!dep.has(h)){out.innerHTML=`<p class="err">${esc(AL[me].name)} doesn't fly from there.</p>`;return;}$("a").value=h;
+  const mc=+$("mc").value,MX={45:180,60:240,90:300}[mc];setQ("banks",{al:me,ap:h,mc});
+  const arr=[],deps=[];
+  for(const r of mine)for(const l of weekLegs(r)){if(l.to===h)arr.push({from:l.from,m:lmin(h,l.t+l.dur),n:l.days.size});if(l.from===h&&r.A===h&&l.to===r.B)deps.push({r,l,to:l.to,m:lmin(h,l.t),n:l.days.size});}
+  if(!deps.length||!arr.length){out.innerHTML=`<p class="note">Not enough flights in and out of ${h} to build banks.</p>`;return;}
+  const feeds=(m,to)=>arr.reduce((s,a)=>{if(a.from===to)return s;const g=mod(m-a.m,1440);return s+(g>=mc&&g<=MX?a.n:0);},0);
+  const res=deps.map(d=>{const now=feeds(d.m,d.to);let best=now,bm=d.m;for(let s=-180;s<=180;s+=5){if(!s)continue;const m=mod(d.m+s,1440),v=feeds(m,d.to);if(v>best||(v===best&&Math.abs(s)<Math.abs(mod(bm-d.m+720,1440)-720))){best=v;bm=m;}}return Object.assign(d,{now,best,bm,gain:best-now});});
+  const nowT=res.reduce((s,x)=>s+x.now,0),bestT=res.reduce((s,x)=>s+x.best,0),moves=res.filter(x=>x.gain>0).sort((p,q)=>q.gain-p.gain);
+  const ha=new Array(24).fill(0);arr.forEach(a=>ha[Math.floor(a.m/60)]+=a.n);const peaks=ha.map((v,i)=>[v,i]).sort((p,q)=>q[0]-p[0]).slice(0,4).map(x=>x[1]).sort((a,b)=>a-b);
+  out.innerHTML=`<div class="stats">${stat("Connections now",fmtN(nowT),"a week, feeder into departure",true)}${stat("After the moves",fmtN(bestT),`${nowT?"+"+Math.round((bestT-nowT)/Math.max(1,nowT)*100)+"%":""}`)}${stat("Routes to move",fmtN(moves.length),`of ${fmtN(res.length)} leaving ${h}`)}${stat("Arrival peaks",peaks.map(i=>String(i).padStart(2,"0")+":00").join(" "),"your banks form around these")}</div>
+  ${moves.length?`<div class="scroll"><table class="tbl"><thead><tr><th>Flight</th><th class="r">Leaves now</th><th class="r">Better</th><th class="r">Feeders now</th><th class="r">Feeders then</th></tr></thead><tbody>${moves.slice(0,40).map(x=>`<tr><td><b>${esc(fnOf(me,x.l.fn))}</b> ${h}–${x.to}</td><td class="r">${hhmm(x.m)}</td><td class="r ok">${hhmm(x.bm)}</td><td class="r">${fmtN(x.now)}</td><td class="r">${fmtN(x.best)}</td></tr>`).join("")}</tbody></table></div>`:`<p class="note">Every departure already sits where it catches the most feeders.</p>`}
+  <p class="note">Local time at ${h}. Only routes that start at ${h} are moved, by up to 3 hours, in the game's five-minute steps. Feeders count each arriving flight a week from somewhere other than where the departure goes. Moving a departure moves that whole route's day, so run the Turnaround check afterwards.</p>`;}
+
+/* ---------- Elysium: schedule report card ---------- */
+const GRADE=p=>p>=95?"A":p>=85?"B":p>=70?"C":p>=50?"D":"F",GPA={A:4,B:3,C:2,D:1,F:0};
+function viewReport(){const q=Q();$("main").innerHTML=head("Schedule","report card","Every Elysium check on one airline at once, graded, with the worst problems first.")+
+  `<form class="f" id="f">${alIn("al","Airline",alVal(q))}<button class="btn prim">Grade it</button></form><div class="out" id="out"></div>`;alList();$("f").onsubmit=e=>{e.preventDefault();runReport();};if(q.get("al")!=null||q.get("q"))runReport(q.get("al")!=null?+q.get("al"):undefined);}
+function runReport(pick){const out=$("out"),me=alResolve(out,$("al"),pick,i=>runReport(i));if(me==null)return;$("al").value=AL[me].name;setQ("report",{al:me});
+  const rows=ROT.filter(r=>r.ai===me);if(!rows.length)return noRoutes(out,me);
+  const L=[];rows.forEach(r=>weekLegs(r).forEach(l=>L.push(l)));const G=[];
+  /* curfews */
+  let cur=0;for(const l of L){const cd=CURFEW[l.from],ca=CURFEW[l.to];if(cd&&cd[2]==="curfew"&&inWin(lmin(l.from,l.t),[hm(cd[0]),hm(cd[1])]))cur++;if(ca&&ca[2]==="curfew"&&inWin(lmin(l.to,l.t+l.dur),[hm(ca[0]),hm(ca[1])]))cur++;}
+  G.push({k:"Curfews",tool:"curfew",g:cur===0?"A":cur<=2?"B":cur<=5?"C":cur<=10?"D":"F",txt:cur?`${fmtN(cur)} flight${cur>1?"s":""} inside a night curfew`:"no flights inside a curfew"});
+  /* small hours */
+  const small=L.filter(l=>{const d=lmin(l.from,l.t),a=lmin(l.to,l.t+l.dur);return (d>=60&&d<300)||(a>=60&&a<300);}).length,sp=100-small/L.length*100;
+  G.push({k:"Passenger-friendly times",tool:"hours",g:GRADE(sp),txt:`${Math.round(sp)}% of flights leave and land between 5 AM and 1 AM`});
+  /* registrations */
+  const acs=[...new Set(rows.filter(r=>r.ac>=0&&ACL[r.ac]).map(r=>r.ac))],cc=AL[me].country;
+  if(acs.length&&REGP[cc]){const ok=acs.filter(ac=>regFits(ACL[ac][1],cc)).length,p=ok/acs.length*100;G.push({k:"Registrations",tool:"regs",g:GRADE(p),txt:`${Math.round(p)}% of planes carry ${esc(country(cc))}'s letters`});}
+  /* flight numbers */
+  const fine=rows.filter(r=>{const ifn=r.ifn!=null?r.ifn:r.fn+1;return (r.fn%2===1&&ifn===r.fn+1)||(r.fn%2===0&&(ifn===r.fn-1||ifn===r.fn+1));}).length,fp=fine/rows.length*100;
+  G.push({k:"Flight numbers",tool:"fltno",g:GRADE(fp),txt:`${Math.round(fp)}% of routes follow odd out, even back`});
+  /* turnarounds */
+  const by=new Map(),d0=Math.floor(nowMin()/1440);for(const r of rows){if(r.ac<0)continue;for(let d=d0-1;d<d0+8;d++){if(!runsOn(r,d))continue;for(const l of legsOf(r,d)){let a=by.get(r.ac);if(!a){a=[];by.set(r.ac,a);}a.push(l);}}}
+  let iss=0;const badPl=new Set();for(const [ac,X] of by){X.sort((p,q)=>p.t-q.t);const need=minTurn(acModel(ac));for(let i=1;i<X.length;i++){const p=X[i-1],n=X[i];if(p.r===n.r||p.t+p.dur<d0*1440||n.t>=(d0+7)*1440)continue;const g=n.t-(p.t+p.dur);if(g<0||p.to!==n.from||g<need){iss++;badPl.add(ac);}}}
+  if(by.size){const p=100-badPl.size/by.size*100;G.push({k:"Turnarounds",tool:"turns",g:GRADE(p),txt:iss?`${fmtN(badPl.size)} of ${fmtN(by.size)} planes have a clash, wrong-place or short turn`:"every plane's week joins up"});}
+  /* spread */
+  const few=rows.filter(r=>{const c=pc(r.dm);return c>=2&&c<=5;});if(few.length){const bad=few.filter(r=>{const c=pc(r.dm),D=[0,1,2,3,4,5,6].filter(i=>(r.dm>>i)&1),mx=Math.max(...D.map((d,i)=>mod(D[(i+1)%D.length]-d,7)||7));return mx-Math.ceil(7/c)>=2;}).length,p=100-bad/few.length*100;
+    G.push({k:"Frequency spread",tool:"spread",g:GRADE(p),txt:`${Math.round(p)}% of part-week routes are evenly spread`});}
+  /* one type per flight */
+  const M=new Map();rows.forEach(r=>{if(r.ac<0||!ACL[r.ac])return;const t=ACL[r.ac][0];for(const fn of [r.fn,r.ifn!=null?r.ifn:r.fn+1]){const s=M.get(fn)||new Set();s.add(t);M.set(fn,s);}});
+  if(M.size){const p=[...M.values()].filter(s=>s.size===1).length/M.size*100;G.push({k:"Same flight, same plane",tool:"equip",g:GRADE(p),txt:`${Math.round(p)}% of flight numbers stay on one type`});}
+  const gpa=G.reduce((s,x)=>s+GPA[x.g],0)/G.length,overall=gpa>=3.5?"A":gpa>=2.75?"B":gpa>=2?"C":gpa>=1.25?"D":"F";
+  G.sort((p,q)=>GPA[p.g]-GPA[q.g]);
+  out.innerHTML=`<div class="report"><div class="grade g${overall}"><span>${overall}</span><small>overall</small></div><div><b>${esc(AL[me].name)}</b><p class="note" style="margin:4px 0 0">${G.filter(x=>GPA[x.g]<=1).length?`Start with ${G.filter(x=>GPA[x.g]<=1).map(x=>x.k.toLowerCase()).join(" and ")}.`:"A realistic schedule. Nice work."}</p></div></div>
+  <div class="cards">${G.map(x=>`<a class="rc" href="#/${x.tool}?al=${me}"><span class="grade sm g${x.g}"><span>${x.g}</span></span><span><b>${x.k}</b><small>${x.txt}</small></span></a>`).join("")}</div>
+  <p class="note">A 95%+, B 85%+, C 70%+, D 50%+. Curfews are graded on the count: none is an A. Turnarounds are strict on purpose: the game lets a plane start its next route 5 minutes after landing, which no real airline can do, so most airlines score low there. Click any card for the full check.</p>`;}
+
+/* ---------- Starliner chime: the four-note call from the boarding music ---------- */
+const SND={on:(()=>{try{return localStorage.getItem("echo_tb_sound")!=="0";}catch(_){return true;}})(),ctx:null};
+function chime(){if(!SND.on)return;try{const C=SND.ctx||(SND.ctx=new (window.AudioContext||window.webkitAudioContext)());const t0=C.currentTime+0.02,g=C.createGain();g.gain.value=0.08;g.connect(C.destination);
+  [[0,81],[0.13,78],[0.26,86],[0.52,85]].forEach(([dt,m])=>{const f=440*Math.pow(2,(m-69)/12),o=C.createOscillator(),mo=C.createOscillator(),mg=C.createGain(),e=C.createGain();
+    o.frequency.value=f;mo.frequency.value=f*3.5;mg.gain.setValueAtTime(f*2,t0+dt);mg.gain.exponentialRampToValueAtTime(1,t0+dt+0.6);mo.connect(mg);mg.connect(o.frequency);
+    e.gain.setValueAtTime(0.0001,t0+dt);e.gain.exponentialRampToValueAtTime(1,t0+dt+0.01);e.gain.exponentialRampToValueAtTime(0.0001,t0+dt+(dt>0.5?1.4:0.7));o.connect(e);e.connect(g);
+    o.start(t0+dt);mo.start(t0+dt);o.stop(t0+dt+1.5);mo.stop(t0+dt+1.5);});}catch(_){}}
+function soundBtn(){return `<button type="button" class="linkbtn share" onclick="SND.on=!SND.on;try{localStorage.setItem('echo_tb_sound',SND.on?'1':'0')}catch(_){};this.textContent=SND.on?'Sound on':'Sound off';if(SND.on)chime();">${SND.on?"Sound on":"Sound off"}</button>`;}
+/* a right answer anywhere in the games plays it */
+new MutationObserver(ms=>{for(const m of ms)for(const nd of m.addedNodes){if(nd.nodeType!==1)continue;if((nd.matches&&nd.matches(".qres.ok"))||(nd.querySelector&&nd.querySelector(".qres.ok"))){chime();return;}}}).observe(document.getElementById("main"),{childList:true,subtree:true});
+
+/* ---------- game: airport higher or lower ---------- */
+const AH={cur:null,streak:0};
+function viewAPHigher(){$("main").innerHTML=gameHead("Airport","higher or lower","Does the next airport have more or fewer Echo departures a week? One wrong answer ends the run.")+`<div class="out" id="out"></div>`;AH.cur=pickR(apBusy().slice(0,400))[0];AH.streak=0;ahRound();}
+function ahRound(){const out=$("out"),W=apWeek(),pool=apBusy().slice(0,400).map(x=>x[0]),a=AH.cur,va=W.get(a)||0;let b,vb,t=0;do{b=pickR(pool);vb=W.get(b)||0;t++;}while((b===a||vb===va)&&t<200);
+  const card=(c,v,hide)=>`<div class="hlc"><p class="bigcode" style="font-size:72px">${c}</p><p class="hln">${esc(cityOf(c))}</p><p class="hls">${esc(country(AP[c].cc))}</p><p class="hlv"${hide?' id="hv"':""}>${hide?"?":fmtN(v)}</p><p class="hlk">Echo departures a week</p>${hide?`<div class="qopts hlb"><button type="button" class="btn qo" id="hi">Higher</button><button type="button" class="btn qo" id="lo">Lower</button></div>`:""}</div>`;
+  out.innerHTML=`<div class="stats">${stat("Streak",fmtN(AH.streak),`best ${fmtN(best.get("aphigher"))}`)}</div><div class="hl">${card(a,va)}<div class="hlvs">vs</div>${card(b,vb,true)}</div><div id="qr"></div>`;
+  const go=up=>{const ok=up?vb>va:vb<va;$("hi").disabled=$("lo").disabled=true;$(up?"hi":"lo").classList.add(ok?"right":"wrong");$("hv").textContent=fmtN(vb);
+    if(ok){AH.streak++;best.set("aphigher",AH.streak);$("qr").innerHTML=`<p class="qres ok">Right. ${b} has ${fmtN(vb)}.</p><button type="button" class="btn prim" id="nx">Keep going</button>`;$("nx").onclick=()=>{AH.cur=b;ahRound();};}
+    else{$("qr").innerHTML=`<p class="qres bad">Not this time. ${b} has ${fmtN(vb)}. Your run: ${AH.streak}.</p><button type="button" class="btn prim" id="nx">Play again</button>`;$("nx").onclick=viewAPHigher;}$("nx").focus();};
+  $("hi").onclick=()=>go(true);$("lo").onclick=()=>go(false);}
+function qAP(rnd){const W=apWeek(),pool=apBusy().slice(0,400).map(x=>x[0]);let a,b,t=0;do{a=pickW(pool,rnd);b=pickW(pool,rnd);t++;}while((a===b||W.get(a)===W.get(b))&&t<100);
+  return {top:`<p class="qask">Which airport has more Echo departures a week?</p>`,opts:[a,b].map(c=>({html:`<b>${c}</b> ${esc(cityOf(c))}<span class="sub">${esc(country(AP[c].cc))}</span>`,ok:W.get(c)>W.get(c===a?b:a)})),explain:ok=>`${ok?"Right.":"Not quite."} ${a}: ${fmtN(W.get(a))}, ${b}: ${fmtN(W.get(b))}.`};}
+function qCodeHard(rnd){const pool=apBusy().slice(150,1500).map(x=>x[0]),ans=pickW(pool,rnd),opts=[ans],cs=new Set([cityOf(ans)]);while(opts.length<4){const c=pickW(pool,rnd);if(!cs.has(cityOf(c))){cs.add(cityOf(c));opts.push(c);}}
+  return {top:`<p class="bigcode">${ans}</p><p class="qask">Which city?</p>`,opts:opts.sort(()=>((rnd||Math.random)()-0.5)).map(c=>({html:`${esc(cityOf(c))}<span class="sub">${esc(country(AP[c].cc))}</span>`,ok:c===ans})),explain:ok=>`${ok?"Right.":"Not quite."} ${ans} is ${esc(AP[ans].name)}.`};}
+
+/* ---------- game: fill the day ---------- */
+const FD={best:0};
+function viewFillDay(){$("main").innerHTML=gameHead("Fill","the day","One plane, one hub, a 20-hour day. Pick round trips to fill it as full as you can without going over. Each trip includes the time on the ground.")+`<div class="out" id="out"></div>`;fdNew();}
+function fdNew(){const out=$("out"),F=typeFar(),types=[...F].filter(([t,f])=>f.p95>2500&&f.p95<16000).map(x=>x[0]),hubs=apBusy().slice(0,120).map(x=>x[0]);let h,t,C=[],tries=0;
+  while(C.length<8&&tries++<40){h=pickR(hubs);t=pickR(types);const R=F.get(t).p95,turn=minTurn(MODELS[t]),P=pairIndex();
+    const cand=[...P.keys()].filter(k=>{const [x,y]=k.split("|");return (x===h||y===h);}).map(k=>{const [x,y]=k.split("|"),c=x===h?y:x;return c;}).filter(c=>AP[c]&&km(h,c)<=R&&km(h,c)>300);
+    C=shuffle(cand).map(c=>{const o=Math.round(pairDur(h,c)||estBlock(h,c)),b=Math.round(pairDur(c,h)||estBlock(c,h));return {c,trip:Math.round((o+b+groundMin(h,c)+turn)/5)*5};}).filter(x=>x.trip>=150&&x.trip<=660).slice(0,8);}
+  const DAY=1200;let opt=0;for(let m=1;m<(1<<C.length);m++){let s=0;for(let i=0;i<C.length;i++)if(m>>i&1)s+=C[i].trip;if(s<=DAY&&s>opt)opt=s;}
+  const sel=new Set();
+  const draw=(done)=>{const used=[...sel].reduce((s,i)=>s+C[i].trip,0),over=used>DAY;
+    out.innerHTML=`<div class="stats">${stat("Hub",h,esc(cityOf(h)),true)}${stat("Plane",esc(MODELS[t]),"")}${stat("Day used",`${dur(used)} of ${dur(DAY)}`,over?"too much: take one out":"")}${stat("Perfect fills",fmtN(FD.best),`best ${fmtN(best.get("fillday"))}`)}</div>
+    <div class="dayfill"><i style="width:${Math.min(100,used/DAY*100).toFixed(1)}%" class="${over?"over":""}"></i></div>
+    <div class="fdg">${C.map((x,i)=>`<button type="button" class="fdc${sel.has(i)?" on":""}" data-i="${i}"${done?" disabled":""}><b>${h}–${x.c}</b><span>${esc(cityOf(x.c))}</span><em>${dur(x.trip)}</em></button>`).join("")}</div>
+    <div id="qr">${done?"":`<button type="button" class="btn prim" id="go"${over||!sel.size?" disabled":""}>Lock it in</button>`}</div>`;
+    if(!done){out.querySelectorAll(".fdc").forEach(b=>b.onclick=()=>{const i=+b.dataset.i;sel.has(i)?sel.delete(i):sel.add(i);draw();});
+      if($("go"))$("go").onclick=()=>{const u=[...sel].reduce((s,i)=>s+C[i].trip,0),perfect=u===opt;if(perfect){FD.best++;best.set("fillday",FD.best);}draw(true);
+        $("qr").innerHTML=`<p class="qres ${perfect?"ok":"bad"}">${perfect?`Perfect: ${dur(u)}, the fullest day possible.`:`${dur(u)} used. The fullest possible was ${dur(opt)}.`}</p><button type="button" class="btn prim" id="nx">New day</button>`;$("nx").onclick=fdNew;$("nx").focus();};}};
+  draw();}
+
+/* ---------- game: weekly challenge ---------- */
+const WK={i:0,res:[],qs:[]};
+function isoWeek(){const d=new Date(),t=new Date(Date.UTC(d.getUTCFullYear(),d.getUTCMonth(),d.getUTCDate())),day=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-day);const y=t.getUTCFullYear(),w=Math.ceil(((t-Date.UTC(y,0,1))/864e5+1)/7);return {y,w,k:y*100+w};}
+function viewWeekly(){const W=isoWeek(),saved=(()=>{try{return JSON.parse(localStorage.getItem("echo_tb_weekly")||"null");}catch(_){return null;}})();
+  $("main").innerHTML=gameHead("Echo","Weekly","Ten harder questions, the same for everyone this week, with its own board. New set every Monday (UTC).")+`<div class="out" id="out"></div>`;
+  if(saved&&saved.k===W.k)return weeklyEnd(saved.res);
+  const rnd=seeded(W.k*7+3);WK.qs=[qTail(rnd),qCodeHard(rnd),qWho(rnd),qHL(rnd),qAP(rnd),qReal(rnd),qTail(rnd),qWho(rnd),qCodeHard(rnd),qHL(rnd)];WK.i=0;WK.res=[];weeklyRound();}
+function weeklyRound(){const out=$("out");if(WK.i>=WK.qs.length){try{localStorage.setItem("echo_tb_weekly",JSON.stringify({k:isoWeek().k,res:WK.res}));}catch(_){}return weeklyEnd(WK.res);}
+  const q=WK.qs[WK.i];out.innerHTML=`<div class="stats">${stat("Question",`${WK.i+1} of 10`,"")}${stat("Score",fmtN(WK.res.filter(Boolean).length),"")}</div><div class="codebox">${q.top}<div id="qb"></div></div>`;
+  fourWay($("qb"),q.opts,(ok,ex)=>{WK.res.push(ok);$("qr").innerHTML=`<p class="qres ${ok?"ok":"bad"}">${ex}</p><button type="button" class="btn prim" id="nx">${WK.i>=9?"See your score":"Next question"}</button>`;$("nx").onclick=()=>{WK.i++;weeklyRound();};$("nx").focus();},q.explain);}
+function weeklyEnd(res){const out=$("out"),n=res.filter(Boolean).length,W=isoWeek(),share=`Echo Weekly ${W.y} week ${W.w}: ${n}/10\n${res.map(x=>x?"🟩":"🟥").join("")}`;best.set("weekly",n);
+  out.innerHTML=`<div class="stats">${stat("This week",`${n} of 10`,n>=9?"outstanding":n>=6?"solid":"a tough set",true)}${stat("Best",`${best.get("weekly")} of 10`,"")}</div>
+  <div class="codebox"><p class="dailyrow">${res.map(x=>`<i class="${x?"y":"n"}"></i>`).join("")}</p><pre class="share" id="sh">${esc(share)}</pre><div class="row-btns"><button type="button" class="btn prim" id="cp">Copy for Discord</button><span class="note" id="cpm" style="margin:0"></span></div></div><div id="board"><p class="note">Loading this week's board…</p></div>`;
+  $("cp").onclick=async()=>{try{await navigator.clipboard.writeText(share);$("cpm").textContent="Copied.";}catch(_){$("cpm").textContent="Select the text above and copy it.";}};weeklyBoard(res);}
+async function weeklyBoard(res){const box=$("board");if(!box)return;const k=isoWeek().k,sent=(()=>{try{return localStorage.getItem("echo_tb_weekly_sent")===String(k);}catch(_){return false;}})(),last=(()=>{try{return localStorage.getItem("echo_tb_name")||"";}catch(_){return "";}})();
+  let top=[];try{top=await rpc("echo_weekly_top",{});}catch(_){box.innerHTML=`<p class="note">This week's board couldn't load.</p>`;return;}
+  box.innerHTML=`<h4>This week's board</h4>${sent?"":`<div class="f dotsf"><label>Your name on the board<input id="bn" maxlength="20" autocomplete="nickname" value="${esc(last)}" placeholder="Your Discord name"></label><button type="button" class="btn prim" id="bs">Add my score</button></div><p class="err" id="be" hidden></p>`}
+  ${Array.isArray(top)&&top.length?`<div class="scroll"><table class="tbl"><thead><tr><th class="r">#</th><th>Name</th><th>Score</th></tr></thead><tbody>${top.map((x,i)=>`<tr><td class="r">${i+1}</td><td>${esc(x.name)}</td><td>${String(x.res).split("").map(c=>c==="1"?"🟩":"🟥").join("")} <b>${x.score}</b></td></tr>`).join("")}</tbody></table></div>`:`<p class="note">Nobody's on this week's board yet.</p>`}`;
+  if($("bs"))$("bs").onclick=async()=>{const nm=$("bn").value.trim();if(nm.length<2){$("be").hidden=false;$("be").textContent="Type a name of at least 2 letters.";return;}$("bs").disabled=true;let r;try{r=await rpc("echo_weekly_submit",{p_name:nm,p_res:res.map(x=>x?"1":"0").join("")});}catch(_){r={ok:false};}
+    if(r&&r.ok){try{localStorage.setItem("echo_tb_weekly_sent",String(k));localStorage.setItem("echo_tb_name",nm);}catch(_){}weeklyBoard(res);}else{$("bs").disabled=false;$("be").hidden=false;$("be").textContent=r&&r.why==="taken"?"Someone already used that name this week. Try another.":r&&r.why==="name"?"Use letters, numbers, spaces, dots, dashes or underscores.":"Your score couldn't be added. Try again in a minute.";}};}
+
 /* ---------- motion helpers ----------
    Whatever a tool draws gets its order for the staggered entrances (--i), and the big numbers on
    the result cards count up from zero. Nothing moves for people who've asked for less motion. */
@@ -1866,16 +2333,24 @@ const TOOLS=[["route","Route checker","Who already flies a route, how often, and
   ["export","Timetable export","Your schedule as a spreadsheet, or a timetable page for a hub to print or save as PDF."],
   ["nexthub","Next hub","Where to open your next base: the busy airports that bring the most new places into reach."],
   ["twins","Network twins","The Echo airlines whose route maps look most like yours, in every division."]];
+TOOLS.push(["movers","Biggest movers","Which Echo airlines grew or shrank most since the last capture, by routes and flights."],
+  ["plane","Plane finder","Type a registration: that plane's whole week, where it spends each night and how much it flies."],
+  ["routebuild","Route builder","From one airport to another on Echo flights in the fewest hops, inside one division if you like."]);
+TOOLS.push(["daybuild","Plane day builder","Fill a plane's day from your hub with the most valuable routes your airline doesn't fly yet."],
+  ["plans","My plans","The routes you've saved with + Plan, in one list to check, export or share."],
+  ["division","Division dashboard","One division at a glance: size, growth, top airlines, busiest airports and overlaps."]);
 function viewHome(){
   const caps=[...new Set(DIVS.map(d=>d.captured))].sort(),cap=caps[caps.length-1];
   $("main").innerHTML=`<section class="hero"><h2><span class="w1">Echo</span> <em class="w2">AirTools<svg class="swoosh" viewBox="0 0 230 30" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 20 C 60 4, 140 30, 226 8" fill="none" stroke="#c4a1ff" stroke-width="5" stroke-linecap="round"/></svg></em></h2><p>Little tools for running your airline, built on the same timetable as Echo Live: every route, aircraft and flight number in all ${["","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"][DIVS.length]||DIVS.length} divisions.</p></section>
   <p class="status"><b>${fmtN(AL.length)}</b> airlines · <b>${fmtN(apList().length)}</b> airports${cap?` · timetable from <b>${new Date(cap+"T12:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"long"})}</b>`:""}</p>
-  <div class="tools">${TOOLS.map(([k,n,p],i)=>`<a class="tool" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}</span><h3>${esc(n)}</h3><p>${esc(p)}</p></a>`).join("")}</div>`;}
+  ${myBar()}<div class="tools">${TOOLS.map(([k,n,p],i)=>`<a class="tool" href="#/${k}"><span class="n">${String(i+1).padStart(2,"0")}</span><h3>${esc(n)}</h3><p>${esc(p)}</p></a>`).join("")}</div>`;wireMyBar();}
 function route(){
   const t=(location.hash.slice(2).split("?")[0])||"";
   const isGame=t==="games"||GAMES.some(x=>x[0]===t),isE=t==="elysium"||ELY.some(x=>x[0]===t);document.querySelectorAll("#nav a").forEach(a=>{const on=a.dataset.t===(isGame?"games":isE?"elysium":"tools");a.classList.toggle("on",on);if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");});
-  const v={route:viewRoute,rotation:viewRotation,distance:viewDistance,numbers:viewNumbers,profit:viewProfit,partners:viewPartners,gaps:viewGaps,connect:viewConnect,time:viewTime,slots:viewSlots,fleetuse:viewFleetUse,rank:viewRank,reach:viewReach,day:viewDay,hubs:viewHubs,vs:viewVs,airport:viewAirport,map:viewMap,waves:viewWaves,stopover:viewStop,overlap:viewOverlap,changes:viewChanges,rightsize:viewRightsize,card:viewCard,export:viewExport,nexthub:viewNextHub,twins:viewTwins,quiz:viewQuiz,games:viewGames,higher:viewHigher,codes:viewCodes,guess:viewGuess,realroute:viewReal,daily:viewDaily,whoflies:viewWho,oddone:viewOdd,pin:viewPin,flighttime:viewFlightTime,elysium:viewElysium,curfew:viewCurfew,hours:viewHours,regs:viewRegs,fltno:viewFltNo,turns:viewTurns,runway:viewRunway}[t]||viewHome;
-  if(location.hash!==route.last){const same=(route.lastT===t);route.last=location.hash;route.lastT=t;if(!same)scrollTo(0,0);v();if(ELY.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/elysium">← Elysium</a></p>`);else if(TOOLS.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/">← All tools</a></p>`);const n=TOOLS.find(x=>x[0]===t)||ELY.find(x=>x[0]===t)||GAMES.find(x=>x[0]===t)||(t==="games"?[t,"Games"]:t==="elysium"?[t,"Elysium"]:null);document.title=n?`${n[1]} · Echo AirTools`:"Echo AirTools";}
+  const v={route:viewRoute,rotation:viewRotation,distance:viewDistance,numbers:viewNumbers,profit:viewProfit,partners:viewPartners,gaps:viewGaps,connect:viewConnect,time:viewTime,slots:viewSlots,fleetuse:viewFleetUse,rank:viewRank,reach:viewReach,day:viewDay,hubs:viewHubs,vs:viewVs,airport:viewAirport,map:viewMap,waves:viewWaves,stopover:viewStop,overlap:viewOverlap,changes:viewChanges,rightsize:viewRightsize,card:viewCard,export:viewExport,nexthub:viewNextHub,twins:viewTwins,quiz:viewQuiz,games:viewGames,higher:viewHigher,codes:viewCodes,guess:viewGuess,realroute:viewReal,daily:viewDaily,whoflies:viewWho,oddone:viewOdd,pin:viewPin,flighttime:viewFlightTime,elysium:viewElysium,curfew:viewCurfew,hours:viewHours,regs:viewRegs,fltno:viewFltNo,turns:viewTurns,runway:viewRunway,movers:viewMovers,plane:viewPlane,routebuild:viewRouteBuild,spread:viewSpread,equip:viewEquip,shape:viewShape,whosenet:viewWhoseNet,dots:viewDots,daybuild:viewDayBuild,plans:viewPlans,division:viewDivision,banks:viewBanks,report:viewReport,aphigher:viewAPHigher,fillday:viewFillDay,weekly:viewWeekly}[t]||viewHome;
+  /* a tool with an airline box, opened without one in the address: start it on your airline */
+  if(!location.hash.includes("?")&&D&&(TOOLS.some(x=>x[0]===t)||ELY.some(x=>x[0]===t))&&/alIn\(|elyAl\(/.test(String(v))&&myAl()!=null)history.replaceState(null,"",`#/${t}?al=${myAl()}`);
+  if(location.hash!==route.last){const same=(route.lastT===t);route.last=location.hash;route.lastT=t;if(!same)scrollTo(0,0);v();if(ELY.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/elysium">← Elysium</a><span class="bb">${liveBtn()}${shareBtn()}</span></p>`);else if(TOOLS.some(x=>x[0]===t))$("main").insertAdjacentHTML("afterbegin",`<p class="back"><a href="#/">← All tools</a><span class="bb">${liveBtn()}${shareBtn()}</span></p>`);const n=TOOLS.find(x=>x[0]===t)||ELY.find(x=>x[0]===t)||GAMES.find(x=>x[0]===t)||(t==="games"?[t,"Games"]:t==="elysium"?[t,"Elysium"]:null);document.title=n?`${n[1]} · Echo AirTools`:"Echo AirTools";}
 }
 addEventListener("hashchange",()=>{if(!document.body.classList.contains("locked")&&D)route();});
 (async()=>{
